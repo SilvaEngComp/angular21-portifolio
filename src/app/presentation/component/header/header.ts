@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BtnPrimary } from "../btn-primary/btn-primary";
+import { BtnPrimary } from '../btn-primary/btn-primary';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +7,5 @@ import { BtnPrimary } from "../btn-primary/btn-primary";
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header {
+export class Header {}
 
-}

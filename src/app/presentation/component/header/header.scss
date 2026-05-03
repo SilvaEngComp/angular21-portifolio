@@ -1,19 +1,39 @@
-header {
+.topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 24px;
-
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-  }
-
-  a{
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-  }
+  padding: 28px 32px;
+  border-radius: 32px;
+  background: #e6dcc2;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
 }
+
+.brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+}
+
+.brand strong {
+  margin-left: 10px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
