@@ -1,0 +1,30 @@
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #202020;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 2.6vw, 3.4rem);
+  line-height: 1.02;
+  margin: 0;
+}
+
+p {
+  margin-top: 24px;
+  max-width: 42rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #2d2d2d;
+}
+

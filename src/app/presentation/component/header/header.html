@@ -1,8 +1,15 @@
-<header>
-  <a>Home</a>
-  <div class="menu">
-
-    <a>Projects</a>
-    <btn-primary text="Contact me"></btn-primary>
+<header class="topbar">
+  <div class="brand">
+    <strong>Eliabe Nascimento Silva</strong>
+    <p> Mobile: +55 (75) 98100‑4665 </p>
+    <p><a href="https://www.linkedin.com/in/eliabe-n-silva/">LinkedIn</a> | <a href="mailto:silvaengcomp@gmail.com">silvaengcomp@gmail.com</a></p>
+  </div>
+  <div class="nav-links">
+    <a>{{'nav.home' | translate}}</a>
+    <a>{{'nav.about' | translate}}</a>
+    <a>{{'nav.projects' | translate}}</a>
+    <a>{{'nav.experiences' | translate}}</a>
+    <a>{{'nav.contact' | translate}}</a>
+    <btn-primary [text]="'nav.download' | translate"></btn-primary>
   </div>
 </header>
