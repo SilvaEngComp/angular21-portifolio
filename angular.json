@@ -27,7 +27,7 @@
             "outputPath": "dist/portifolio",
             "runtimeChunk": true,
             "polyfills": [],
-            "optimization": true
+            "optimization": true,
 
             "assets": [
               {
