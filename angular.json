@@ -24,6 +24,11 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "outputPath": "dist/portifolio",
+            "runtimeChunk": true,
+            "polyfills": [],
+            "optimization": true
+
             "assets": [
               {
                 "glob": "**/*",
