@@ -55,7 +55,11 @@ jobs:
         run: |
           aws s3 sync ./dist/portifolio s3://eliabesilva.online/ \
           --delete \
+          --cache-control "max-age=31536000,public" \
+          --exclude "index.html"
+
           
-          aws s3 cp ./dist/portifolio/index.html s3://eliabesilva.online/index.html \
+          aws s3 cp ./dist/portifolio/browser/index.html s3://eliabesilva.online/index.html \
           --cache-control "no-cache,no-store,must-revalidate"
+
 
