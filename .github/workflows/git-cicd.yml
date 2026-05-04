@@ -53,7 +53,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws solio/browser s3://eliabesilva.online/ \
+          aws s3 sync dist/portifolio/browser s3://eliabesilva.online/ \
           --delete \
           --exclude "index.html" \
           --cache-control "max-age=31536000,public" \
