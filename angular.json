@@ -21,14 +21,13 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "src/main.ts",
+            "outputPath": "dist/portifolio",
+            "browser": {
+              "entryPoint": "src/main.ts"
+            },
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "outputPath": "dist/portifolio",
-            "runtimeChunk": true,
-            "polyfills": [],
             "optimization": true,
-
             "assets": [
               {
                 "glob": "**/*",
