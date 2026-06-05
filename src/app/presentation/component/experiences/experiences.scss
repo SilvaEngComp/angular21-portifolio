@@ -3,6 +3,10 @@
     margin: 0 0 16px 0;
   }
 
+  mat-expansion-panel-header {
+    height: 80px !important;
+  }
+
   ul {
     padding-left: 20px;
     margin: 8px 0;

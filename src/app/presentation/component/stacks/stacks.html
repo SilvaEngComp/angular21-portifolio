@@ -1,31 +1,47 @@
-<mat-list class="stacks-list">
-  <mat-list-item lines="2">
-    <mat-icon matListItemIcon>computer</mat-icon>
-    <span matListItemTitle>Frontend</span>
-    <span matListItemLine>Angular (6 yrs), TypeScript (6 yrs), JavaScript (7 yrs), RxJS (5 yrs), HTML (10 yrs), SCSS (10 yrs), Chart.js (5 yrs), Ionic (5 yrs)</span>
-  </mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item lines="2">
-    <mat-icon matListItemIcon>dns</mat-icon>
-    <span matListItemTitle>Backend</span>
-    <span matListItemLine>Java (10 yrs), Spring Boot (5 yrs), RESTful APIs (5 yrs), MariaDB/MySQL (10 yrs), MongoDB (1 yr), Kafka (1 yr)</span>
-  </mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item lines="2">
-    <mat-icon matListItemIcon>cloud</mat-icon>
-    <span matListItemTitle>DevOps / Cloud</span>
-    <span matListItemLine>Azure (2 yrs), GCP (4 yrs), AWS (1 yr), Docker (3 yrs), Kubernetes (1 yr), GitHub Actions (3 yrs)</span>
-  </mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item lines="2">
-    <mat-icon matListItemIcon>verified</mat-icon>
-    <span matListItemTitle>Testing / Quality</span>
-    <span matListItemLine>JUnit, Jest, Jasmine, Mockito, Cucumber, Gherkin, Postman</span>
-  </mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item lines="2">
-    <mat-icon matListItemIcon>build</mat-icon>
-    <span matListItemTitle>Tools</span>
-    <span matListItemLine>Jira, Confluence, GitHub, GitLab, Bitbucket, Figma, Copilot</span>
-  </mat-list-item>
-</mat-list>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>computer</mat-icon>
+        Frontend
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Angular (6 yrs), TypeScript (6 yrs), JavaScript (7 yrs), RxJS (5 yrs), HTML (10 yrs), SCSS (10 yrs), Chart.js (5 yrs), Ionic (5 yrs)</p>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>dns</mat-icon>
+        Backend
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Java (10 yrs), Spring Boot (5 yrs), RESTful APIs (5 yrs), MariaDB/MySQL (10 yrs), MongoDB (1 yr), Kafka (1 yr)</p>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>cloud</mat-icon>
+        DevOps / Cloud
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Azure (2 yrs), GCP (4 yrs), AWS (1 yr), Docker (3 yrs), Kubernetes (1 yr), GitHub Actions (3 yrs)</p>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>verified</mat-icon>
+        Testing / Quality
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>JUnit, Jest, Jasmine, Mockito, Cucumber, Gherkin, Postman</p>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>build</mat-icon>
+        Tools
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Jira, Confluence, GitHub, GitLab, Bitbucket, Figma, Copilot</p>
+  </mat-expansion-panel>
+</mat-accordion>
