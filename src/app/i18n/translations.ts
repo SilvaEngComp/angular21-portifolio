@@ -58,6 +58,8 @@ export const TRANSLATIONS: Record<string, Record<Locale, string>> = {
   'projects.li_3_desc': { en: 'Designed and supervised hybrid app projects integrated with payment machines and scanners.', pt: 'Projetei e supervisei projetos de apps híbridos integrados com máquinas de pagamento e leitores.' },
   'projects.li_4': { en: 'IoT Framework', pt: 'Framework IoT' },
   'projects.li_4_desc': { en: 'Master’s research on reliable IoT data sources using blockchain and ML.', pt: 'Pesquisa de mestrado sobre fontes de dados IoT confiáveis usando blockchain e ML.' },
+  'projects.li_5': { en: 'ChatBot Applications', pt: 'Aplicações ChatBot' },
+  'projects.li_5_desc': { en: 'Developed chatBot applications using Ionic and Laravel, integrating with various APIs and services.', pt: 'Desenvolvi aplicações ChatBot usando Ionic e Laravel, integrando com várias APIs e serviços.' },
   'education.title': { en: 'Education', pt: 'Educação' },
   'education.li_1': { en: 'UNIPDS Educação — Postgraduate — Java Elite (Nov 2025) | Advanced modern Java development and architecture.', pt: 'UNIPDS Educação — Pós-graduação — Java Elite (Nov 2025) | Desenvolvimento moderno de Java e arquitetura avançada.' },
   'education.li_2': { en: 'Federal University of Bahia — Master in Computer Science (Jul 2021 – Nov 2024) | IoT, blockchain, smart contracts, and ML for data validation.', pt: 'Universidade Federal da Bahia — Mestrado em Ciência da Computação (Jul 2021 – Nov 2024) | IoT, blockchain, smart contracts e ML para validação de dados.' },
