@@ -7,11 +7,11 @@ import { StacksComponent } from '../../component/stacks/stacks';
 import { ExperiencesComponent } from '../../component/experiences/experiences';
 import { DegreesComponent } from '../../component/degrees/degrees';
 import { ProjectsComponent } from '../../component/projects/projects';
-import { ResumeComponent } from '../../component/resume/resume';
+import { CertificationsComponent } from '../../component/certifications/certifications';
 
 @Component({
   selector: 'app-home',
-  imports: [MatCardModule, Header, AboutComponent, PortraitComponent, StacksComponent, ExperiencesComponent, DegreesComponent, ProjectsComponent, ResumeComponent],
+  imports: [MatCardModule, Header, AboutComponent, PortraitComponent, StacksComponent, ExperiencesComponent, DegreesComponent, ProjectsComponent, CertificationsComponent],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

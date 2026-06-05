@@ -4,9 +4,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-resume',
+  selector: 'app-certifications',
   imports: [MatListModule, MatDividerModule, MatIconModule],
-  templateUrl: './resume.html',
-  styleUrl: './resume.scss',
+  templateUrl: './certifications.html',
+  styleUrl: './certifications.scss',
 })
-export class ResumeComponent {}
+export class CertificationsComponent {}
