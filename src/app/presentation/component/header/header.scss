@@ -1,39 +1,44 @@
 .topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 28px 32px;
-  border-radius: 32px;
-  background: #e6dcc2;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  flex-wrap: wrap;
+  height: auto !important;
+  min-height: 64px;
+  padding: 12px 24px !important;
+  gap: 8px;
 }
 
 .brand {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 0.08em;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  strong {
+    font-size: 16px;
+    letter-spacing: 0.05em;
+  }
 }
 
-.brand strong {
-  margin-left: 10px;
+.contact-info {
+  display: flex;
+  gap: 4px;
+
+  a {
+    font-size: 12px;
+    min-width: auto;
+    padding: 0 6px;
+    opacity: 0.85;
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
-}
-
-.nav-links a {
-  color: #111;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-}
-
-.nav-links a:hover {
-  opacity: 0.8;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 

@@ -1,25 +1,17 @@
-.resume-card {
-  display: flex;
-  flex-direction: column;
+.resume-container {
   height: 100%;
-}
 
-.resume-card h2 {
-  margin: 0 0 18px 0;
-  font-size: 1.3rem;
-}
+  h2 {
+    margin: 0 0 0 0;
+    font-size: 1.1rem;
+  }
 
-.resume-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 14px;
-}
+  .section-title {
+    margin-top: 16px;
+  }
 
-.resume-card li {
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(34, 34, 34, 0.16);
-  font-weight: 700;
+  mat-list {
+    padding: 0;
+  }
 }
 

@@ -1,17 +1,16 @@
-.about-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
+.experiences-container {
+  h2 {
+    margin: 0 0 16px 0;
+  }
 
-.about-card h2 {
-  margin: 0 0 18px 0;
-}
+  ul {
+    padding-left: 20px;
+    margin: 8px 0;
 
-.about-card p {
-  margin: 0;
-  line-height: 1.8;
-  color: #2b2b2b;
+    li {
+      line-height: 1.8;
+      margin-bottom: 6px;
+    }
+  }
 }
 

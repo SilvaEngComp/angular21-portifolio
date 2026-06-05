@@ -1,15 +1,23 @@
-<header class="topbar">
+<mat-toolbar color="primary" class="topbar">
   <div class="brand">
     <strong>Eliabe Nascimento Silva</strong>
-    <p> Mobile: +55 (75) 98100‑4665 </p>
-    <p><a href="https://www.linkedin.com/in/eliabe-n-silva/">LinkedIn</a> | <a href="mailto:silvaengcomp@gmail.com">silvaengcomp@gmail.com</a></p>
+    <span class="contact-info">
+      <a mat-button href="https://www.linkedin.com/in/eliabe-n-silva/" target="_blank">LinkedIn</a>
+      <a mat-button href="mailto:silvaengcomp@gmail.com">silvaengcomp@gmail.com</a>
+    </span>
   </div>
-  <div class="nav-links">
-    <a>{{'nav.home' | translate}}</a>
-    <a>{{'nav.about' | translate}}</a>
-    <a>{{'nav.projects' | translate}}</a>
-    <a>{{'nav.experiences' | translate}}</a>
-    <a>{{'nav.contact' | translate}}</a>
-    <btn-primary [text]="'nav.download' | translate"></btn-primary>
-  </div>
-</header>
+  <span class="spacer"></span>
+  <nav class="nav-links">
+    <a mat-button>{{'nav.home' | translate}}</a>
+    <a mat-button>{{'nav.about' | translate}}</a>
+    <a mat-button>{{'nav.projects' | translate}}</a>
+    <a mat-button>{{'nav.experiences' | translate}}</a>
+    <a mat-button>{{'nav.contact' | translate}}</a>
+    <a mat-raised-button color="accent"
+       href="/assets/documents/cv_EliabSilva_SoftwareEngineer.md"
+       download>
+      <mat-icon>download</mat-icon>
+      {{'nav.download' | translate}}
+    </a>
+  </nav>
+</mat-toolbar>

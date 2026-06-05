@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { Header } from '../../component/header/header';
 import { AboutComponent } from '../../component/about/about';
 import { PortraitComponent } from '../../component/portrait/portrait';
@@ -10,7 +11,7 @@ import { ResumeComponent } from '../../component/resume/resume';
 
 @Component({
   selector: 'app-home',
-  imports: [Header, AboutComponent, PortraitComponent, StacksComponent, ExperiencesComponent, DegreesComponent, ProjectsComponent, ResumeComponent],
+  imports: [MatCardModule, Header, AboutComponent, PortraitComponent, StacksComponent, ExperiencesComponent, DegreesComponent, ProjectsComponent, ResumeComponent],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
