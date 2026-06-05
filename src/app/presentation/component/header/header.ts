@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -31,6 +31,12 @@ export class Header {
       label: 'Português',
     },
   ];
+
+  readonly cvUrl = computed(() =>
+    this.translation.currentLang() === 'pt'
+      ? 'assets/documents/CV-EliabeSilva-Fullstak - PT.pdf'
+      : 'assets/documents/CV-EliabeSilva-Fullstak - EN.pdf'
+  );
 
   onLanguageChange(locale: Locale): void {
     this.translation.setLanguage(locale);

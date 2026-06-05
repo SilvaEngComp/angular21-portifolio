@@ -15,7 +15,7 @@
     <button mat-button (click)="scrollTo('section-experiences')">{{'nav.experiences' | translate}}</button>
     <button mat-button (click)="scrollTo('section-contact')">{{'nav.contact' | translate}}</button>
     <a mat-raised-button color="accent"
-       href="/assets/documents/cv_EliabSilva_SoftwareEngineer.md"
+       [href]="cvUrl()"
        download>
       <mat-icon>download</mat-icon>
       {{'nav.download' | translate}}
