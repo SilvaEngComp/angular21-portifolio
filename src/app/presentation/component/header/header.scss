@@ -42,3 +42,41 @@
   gap: 4px;
 }
 
+.lang-select {
+  margin-left: 8px;
+  width: 130px;
+
+  // Inherit toolbar text color
+  .mat-mdc-select-value,
+  .mat-mdc-select-arrow {
+    color: inherit;
+  }
+
+  // Outline color
+  .mdc-notched-outline__leading,
+  .mdc-notched-outline__notch,
+  .mdc-notched-outline__trailing {
+    border-color: rgba(255, 255, 255, 0.4) !important;
+  }
+
+  &:hover .mdc-notched-outline__leading,
+  &:hover .mdc-notched-outline__notch,
+  &:hover .mdc-notched-outline__trailing {
+    border-color: rgba(255, 255, 255, 0.8) !important;
+  }
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flag-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
