@@ -8,10 +8,11 @@ import { ExperiencesComponent } from '../../component/experiences/experiences';
 import { DegreesComponent } from '../../component/degrees/degrees';
 import { ProjectsComponent } from '../../component/projects/projects';
 import { CertificationsComponent } from '../../component/certifications/certifications';
+import { ContactComponent } from '../../component/contact/contact';
 
 @Component({
   selector: 'app-home',
-  imports: [MatCardModule, Header, AboutComponent, PortraitComponent, StacksComponent, ExperiencesComponent, DegreesComponent, ProjectsComponent, CertificationsComponent],
+  imports: [MatCardModule, Header, AboutComponent, PortraitComponent, StacksComponent, ExperiencesComponent, DegreesComponent, ProjectsComponent, CertificationsComponent, ContactComponent],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

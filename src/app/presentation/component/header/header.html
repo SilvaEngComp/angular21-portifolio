@@ -4,17 +4,18 @@
     <span class="contact-info">
       <a mat-button href="https://www.linkedin.com/in/eliabe-n-silva/" target="_blank">LinkedIn</a>
       <a mat-button href="mailto:silvaengcomp@gmail.com">silvaengcomp@gmail.com</a>
+      <a mat-button href="tel:+5575981004665">+55 (75) 981004665</a>
     </span>
   </div>
   <span class="spacer"></span>
   <nav class="nav-links">
-    <a mat-button>{{'nav.home' | translate}}</a>
-    <a mat-button>{{'nav.about' | translate}}</a>
-    <a mat-button>{{'nav.projects' | translate}}</a>
-    <a mat-button>{{'nav.experiences' | translate}}</a>
-    <a mat-button>{{'nav.contact' | translate}}</a>
+    <button mat-button (click)="scrollTo('section-home')">{{'nav.home' | translate}}</button>
+    <button mat-button (click)="scrollTo('section-about')">{{'nav.about' | translate}}</button>
+    <button mat-button (click)="scrollTo('section-projects')">{{'nav.projects' | translate}}</button>
+    <button mat-button (click)="scrollTo('section-experiences')">{{'nav.experiences' | translate}}</button>
+    <button mat-button (click)="scrollTo('section-contact')">{{'nav.contact' | translate}}</button>
     <a mat-raised-button color="accent"
-       href="/assets/documents/cv_EliabSilva_SoftwareEngineer.md"
+       [href]="cvUrl()"
        download>
       <mat-icon>download</mat-icon>
       {{'nav.download' | translate}}
