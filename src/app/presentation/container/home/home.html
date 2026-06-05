@@ -1,27 +1,28 @@
 <div class="page-shell">
   <app-header></app-header>
 
-  <div class="bento-grid">
-    <mat-card class="grid-item about">
+  <div id="section-home" class="bento-grid">
+    <mat-card id="section-about" class="grid-item about">
       <mat-card-content>
         <app-about></app-about>
       </mat-card-content>
     </mat-card>
 
-    <mat-card class="grid-item image">
+    <mat-card id="section-contact" class="grid-item image">
       <mat-card-content>
         <app-portrait></app-portrait>
         <app-stacks></app-stacks>
+        <app-contact></app-contact>
       </mat-card-content>
     </mat-card>
 
-    <mat-card class="grid-item feature">
+    <mat-card id="section-projects" class="grid-item feature">
       <mat-card-content>
         <app-projects></app-projects>
       </mat-card-content>
     </mat-card>
 
-    <mat-card class="grid-item narrative">
+    <mat-card id="section-experiences" class="grid-item narrative">
       <mat-card-content>
         <app-experiences></app-experiences>
         <app-degrees></app-degrees>

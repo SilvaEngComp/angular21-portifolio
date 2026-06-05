@@ -79,4 +79,5 @@ export const TRANSLATIONS: Record<string, Record<Locale, string>> = {
   'stacks.devops': { en: 'Azure (2 yrs), GCP (4 yrs), AWS (1 yr), Docker (3 yrs), Kubernetes (1 yr), GitHub Actions (3 yrs), cPanel (10 yrs)', pt: 'Azure (2 anos), GCP (4 anos), AWS (1 ano), Docker (3 anos), Kubernetes (1 ano), GitHub Actions (3 anos), cPanel (10 anos)' },
   'stacks.testing': { en: 'Unit Tests (JUnit, Jest, Jasmine, Mockito), Manual & Automation E2E (Cucumber), Gherkin, Postman', pt: 'Testes Unitários (JUnit, Jest, Jasmine, Mockito), E2E Manual & Automação (Cucumber), Gherkin, Postman' },
   'stacks.tools': { en: 'Jira, Confluence, GitHub, GitLab, Bitbucket, Figma, Copilot Agent Creation, Documentation', pt: 'Jira, Confluence, GitHub, GitLab, Bitbucket, Figma, Criação de Agentes Copilot, Documentação' },
+  'contact.title': { en: 'Contact Me', pt: 'Fale Comigo' },
 };

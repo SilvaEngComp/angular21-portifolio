@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,6 +17,7 @@ import { Locale } from '../../../i18n/translations';
 })
 export class Header {
   readonly translation = inject(TranslationService);
+  private readonly document = inject(DOCUMENT);
 
   readonly languages: { locale: Locale; icon: string; label: string }[] = [
     {
@@ -32,6 +34,17 @@ export class Header {
 
   onLanguageChange(locale: Locale): void {
     this.translation.setLanguage(locale);
+  }
+
+  scrollTo(sectionId: string): void {
+    const el = this.document.getElementById(sectionId);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    el.classList.remove('section-flash');
+    // Force reflow so removing then adding restarts the animation
+    void el.offsetWidth;
+    el.classList.add('section-flash');
+    el.addEventListener('animationend', () => el.classList.remove('section-flash'), { once: true });
   }
 }
 
