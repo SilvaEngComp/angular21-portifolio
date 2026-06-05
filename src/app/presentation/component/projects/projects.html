@@ -1,9 +1,69 @@
-<div class="feature-card">
-  <h2>{{'projects.title' | translate}}</h2>
-  <ul>
-    <li><strong>{{'projects.li_1' | translate}}</strong> {{'projects.li_1_desc' | translate}}</li>
-    <li><strong>{{'projects.li_2' | translate}}</strong> {{'projects.li_2_desc' | translate}}</li>
-    <li><strong>{{'projects.li_3' | translate}}</strong> {{'projects.li_3_desc' | translate}}</li>
-    <li><strong>{{'projects.li_4' | translate}}</strong> {{'projects.li_4_desc' | translate}}</li>
-  </ul>
+<div class="projects-container">
+  <h2 class="mat-headline-small">{{'projects.title' | translate}}</h2>
+  <div class="project-list">
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>{{'projects.li_1' | translate}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{'projects.li_1_desc' | translate}}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>{{'projects.li_2' | translate}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{'projects.li_2_desc' | translate}}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>{{'projects.li_3' | translate}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{'projects.li_3_desc' | translate}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-button href="https://github.com/SilvaEngComp/ecommerce-ms-clients" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.simpleicons.org/github" alt="GitHub" class="btn-icon" /> ms-clients
+        </a>
+        <a mat-button href="https://github.com/SilvaEngComp/ecommerce-ms-products" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.simpleicons.org/github" alt="GitHub" class="btn-icon" /> ms-products
+        </a>
+        <a mat-button href="https://github.com/SilvaEngComp/ecommerce-ms-orders" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.simpleicons.org/github" alt="GitHub" class="btn-icon" /> ms-orders
+        </a>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>{{'projects.li_4' | translate}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{'projects.li_4_desc' | translate}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-button href="https://github.com/SilvaEngComp/RFoT" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.simpleicons.org/github" alt="GitHub" class="btn-icon" /> RFoT
+        </a>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>{{'projects.li_5' | translate}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{'projects.li_5_desc' | translate}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-button href="https://github.com/SilvaEngComp/chatBot_app_ionic" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.simpleicons.org/github" alt="GitHub" class="btn-icon" /> chatBot_app_ionic
+        </a>
+        <a mat-button href="https://github.com/SilvaEngComp/chatBot_api_laravel" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.simpleicons.org/github" alt="GitHub" class="btn-icon" /> chatBot_api_laravel
+        </a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>

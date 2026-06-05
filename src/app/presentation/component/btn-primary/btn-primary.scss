@@ -1,12 +1,7 @@
-:host{
-  button{
-    max-width: 124px;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 3.7px 6.7px 4.01px 6.17px;
-    border-radius: 8px;
+:host {
+  .gradient-btn {
+    background: linear-gradient(90deg, rgba(82, 34, 208, 1) 35%, rgba(255, 97, 150, 1) 100%);
     color: var(--button-text-color);
-    background: rgb(82, 34, 208);
-    background: linear-gradient(90deg,rgba(82,34,208,1) 35%, rgba(255,97,150,1) 100%);
+    border-radius: 8px;
   }
 }

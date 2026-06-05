@@ -1,4 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
-:root{
-  --button-text-color:#DBFFFF;
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      primary: mat.$violet-palette,
+      tertiary: mat.$rose-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background: #0f0f0c;
+}
+
+:root {
+  --button-text-color: #DBFFFF;
 }

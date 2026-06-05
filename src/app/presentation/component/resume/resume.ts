@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { TranslatePipe } from '../../../i18n/translate.pipe';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-resume',
-  imports: [TranslatePipe],
+  imports: [MatListModule, MatDividerModule, MatIconModule],
   templateUrl: './resume.html',
   styleUrl: './resume.scss',
 })

@@ -2,31 +2,36 @@
   <app-header></app-header>
 
   <div class="bento-grid">
-    <div class="grid-item about">
-      <app-about></app-about>
-    </div>
+    <mat-card class="grid-item about">
+      <mat-card-content>
+        <app-about></app-about>
+      </mat-card-content>
+    </mat-card>
 
-    <div class="grid-item image">
-      <app-portrait></app-portrait>
-      <app-stacks></app-stacks>
-    </div>
+    <mat-card class="grid-item image">
+      <mat-card-content>
+        <app-portrait></app-portrait>
+        <app-stacks></app-stacks>
+      </mat-card-content>
+    </mat-card>
 
+    <mat-card class="grid-item feature">
+      <mat-card-content>
+        <app-projects></app-projects>
+      </mat-card-content>
+    </mat-card>
 
+    <mat-card class="grid-item narrative">
+      <mat-card-content>
+        <app-experiences></app-experiences>
+        <app-degrees></app-degrees>
+      </mat-card-content>
+    </mat-card>
 
-    <div class="grid-item feature">
-      <app-projects></app-projects>
-    </div>
-
-    <div class="grid-item narrative">
-      <app-experiences></app-experiences>
-    </div>
-
-    <div class="grid-item contact">
-      <app-degrees></app-degrees>
-    </div>
-
-    <div class="grid-item list">
-      <app-resume></app-resume>
-    </div>
+    <mat-card class="grid-item list">
+      <mat-card-content>
+        <app-resume></app-resume>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>

@@ -1,8 +1,6 @@
 .page-shell {
   min-height: 100vh;
   padding: 24px;
-  background: #0f0f0c;
-  color: #111;
 }
 
 .bento-grid {
@@ -12,19 +10,76 @@
 }
 
 .grid-item {
-  border-radius: 32px;
-  padding: 32px;
-  background: #dfd7c2;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
   min-height: 200px;
+
+  mat-card-content {
+    padding: 16px;
+    height: 100%;
+    box-sizing: border-box;
+  }
 }
 
-.grid-item h2,
-.grid-item h3,
-.grid-item p,
-.grid-item ul,
-.grid-item li {
-  color: #111;
+@media (min-width: 1080px) {
+  .page-shell {
+    padding: 40px 60px;
+  }
+
+  .bento-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: minmax(240px, auto);
+  }
+
+  .about {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .image {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+
+    mat-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  .feature {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+  }
+
+  .list {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+  }
+
+  .narrative {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+
+       mat-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  .contact {
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+  }
+}
+
+@media (max-width: 1079px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-item {
+    min-height: auto;
+  }
 }
 
 @media (min-width: 1080px) {

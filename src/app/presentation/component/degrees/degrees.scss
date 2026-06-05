@@ -1,33 +1,12 @@
-.contact-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.degrees-container {
   height: 100%;
-}
 
-.prompt {
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #222;
-}
+  h2 {
+    margin: 0 0 8px 0;
+  }
 
-.contact-card h2 {
-  margin: 18px 0 0 0;
-}
-
-.contact-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 24px 0 0 0;
-  display: grid;
-  gap: 12px;
-}
-
-.contact-card li {
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(34, 34, 34, 0.16);
-  font-weight: 600;
+  mat-list {
+    padding: 0;
+  }
 }
 
