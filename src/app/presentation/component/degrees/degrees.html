@@ -1,28 +1,21 @@
 <div class="degrees-container">
   <h2 class="mat-headline-small">{{'education.title' | translate}}</h2>
   <mat-list>
-    <mat-list-item lines="3">
-      <mat-icon matListItemIcon>school</mat-icon>
-      <span matListItemTitle>{{'education.li_1' | translate}}</span>
-      <span matListItemLine>Advanced modern Java development and architecture (Spring Boot, Quarkus, Kafka, AWS, DevOps).</span>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item lines="3">
-      <mat-icon matListItemIcon>school</mat-icon>
-      <span matListItemTitle>{{'education.li_2' | translate}}</span>
-      <span matListItemLine>Framework integrating IoT devices, blockchain, smart contracts, and ML for data validation.</span>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item lines="3">
-      <mat-icon matListItemIcon>school</mat-icon>
-      <span matListItemTitle>{{'education.li_3' | translate}}</span>
-      <span matListItemLine>Advanced security strategies to enhance web application resilience.</span>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item lines="3">
-      <mat-icon matListItemIcon>school</mat-icon>
-      <span matListItemTitle>{{'education.li_4' | translate}}</span>
-      <span matListItemLine>Stress level identification using ECG, signal processing, and ML.</span>
-    </mat-list-item>
+    @for (entry of entries; track entry.titleKey; let last = $last) {
+      <mat-list-item lines="3">
+        <span matListItemIcon class="institution-icon">
+          @if (entry.logo) {
+            <img [src]="entry.logo" [alt]="entry.titleKey" class="institution-logo" />
+          } @else {
+            <mat-icon>{{ entry.fallbackIcon }}</mat-icon>
+          }
+        </span>
+        <span matListItemTitle>{{ entry.titleKey | translate }}</span>
+        <span matListItemLine>{{ entry.line }}</span>
+      </mat-list-item>
+      @if (!last) {
+        <mat-divider></mat-divider>
+      }
+    }
   </mat-list>
 </div>

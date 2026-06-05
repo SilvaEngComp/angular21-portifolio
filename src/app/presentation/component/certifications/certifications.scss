@@ -1,0 +1,34 @@
+.certifications-container {
+  height: 100%;
+
+  h2 {
+    margin: 0 0 0 0;
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    margin-top: 16px;
+  }
+
+  mat-list {
+    padding: 0;
+  }
+
+  span[matListItemTitle] {
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+  }
+
+  mat-list-item {
+    height: auto !important;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .in-progress {
+    color: red;
+  }
+}
+

@@ -28,4 +28,15 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  z-index: 0;
+
+  &.active {
+    opacity: 1;
+    z-index: 1;
+  }
 }

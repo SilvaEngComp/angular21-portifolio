@@ -1,5 +1,12 @@
 <div class="image-card">
   <div class="image-block">
-    <img src="/assets/images/portrait.jpg" alt="Portrait Image" class="portrait-image" />
+    @for (img of images; track img; let i = $index) {
+      <img
+        [src]="img"
+        alt="Portrait Image"
+        class="portrait-image"
+        [class.active]="i === currentIndex()"
+      />
+    }
   </div>
 </div>
