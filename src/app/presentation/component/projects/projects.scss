@@ -27,3 +27,20 @@
   }
 }
 
+@media (max-width: 499px) {
+  .projects-container {
+    h2 {
+      font-size: 1rem;
+      margin: 0 0 10px 0;
+    }
+
+    .project-list {
+      gap: 8px;
+
+      mat-card mat-card-content p {
+        font-size: 13px;
+      }
+    }
+  }
+}
+

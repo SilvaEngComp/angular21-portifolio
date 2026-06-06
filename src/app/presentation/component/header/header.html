@@ -1,40 +1,86 @@
 <mat-toolbar color="primary" class="topbar">
   <div class="brand">
     <strong>Eliabe Nascimento Silva</strong>
-    <span class="contact-info">
-      <a mat-button href="https://www.linkedin.com/in/eliabe-n-silva/" target="_blank">LinkedIn</a>
-      <a mat-button href="mailto:silvaengcomp@gmail.com">silvaengcomp@gmail.com</a>
-      <a mat-button href="tel:+5575981004665">+55 (75) 981004665</a>
-    </span>
+    @if (!isMobile()) {
+      <span class="contact-info">
+        <a mat-button href="https://www.linkedin.com/in/eliabe-n-silva/" target="_blank">LinkedIn</a>
+        <a mat-button href="mailto:silvaengcomp@gmail.com">silvaengcomp@gmail.com</a>
+        <a mat-button href="tel:+5575981004665">+55 (75) 981004665</a>
+      </span>
+    }
   </div>
   <span class="spacer"></span>
-  <nav class="nav-links">
-    <button mat-button (click)="scrollTo('section-home')">{{'nav.home' | translate}}</button>
-    <button mat-button (click)="scrollTo('section-about')">{{'nav.about' | translate}}</button>
-    <button mat-button (click)="scrollTo('section-projects')">{{'nav.projects' | translate}}</button>
-    <button mat-button (click)="scrollTo('section-experiences')">{{'nav.experiences' | translate}}</button>
-    <button mat-button (click)="scrollTo('section-contact')">{{'nav.contact' | translate}}</button>
-    <a mat-raised-button color="accent"
-       [href]="cvUrl()"
-       download>
-      <mat-icon>download</mat-icon>
-      {{'nav.download' | translate}}
-    </a>
-    <mat-form-field class="lang-select" appearance="outline" subscriptSizing="dynamic">
-      <mat-select
-        [value]="translation.currentLang()"
-        (valueChange)="onLanguageChange($event)"
-        aria-label="Select language"
-      >
-        @for (lang of languages; track lang.locale) {
-          <mat-option [value]="lang.locale">
-            <span class="lang-option">
-              <img [src]="lang.icon" [alt]="lang.label" class="flag-icon" />
-              {{ lang.label }}
-            </span>
-          </mat-option>
-        }
-      </mat-select>
-    </mat-form-field>
-  </nav>
+
+  @if (!isMobile()) {
+    <nav class="nav-links">
+      <button mat-button (click)="scrollTo('section-home')">{{'nav.home' | translate}}</button>
+      <button mat-button (click)="scrollTo('section-about')">{{'nav.about' | translate}}</button>
+      <button mat-button (click)="scrollTo('section-projects')">{{'nav.projects' | translate}}</button>
+      <button mat-button (click)="scrollTo('section-experiences')">{{'nav.experiences' | translate}}</button>
+      <button mat-button (click)="scrollTo('section-contact')">{{'nav.contact' | translate}}</button>
+      <a mat-raised-button color="accent"
+         [href]="cvUrl()"
+         download>
+        <mat-icon>download</mat-icon>
+        {{'nav.download' | translate}}
+      </a>
+      <mat-form-field class="lang-select" appearance="outline" subscriptSizing="dynamic">
+        <mat-select
+          [value]="translation.currentLang()"
+          (valueChange)="onLanguageChange($event)"
+          aria-label="Select language"
+        >
+          @for (lang of languages; track lang.locale) {
+            <mat-option [value]="lang.locale">
+              <span class="lang-option">
+                <img [src]="lang.icon" [alt]="lang.label" class="flag-icon" />
+                {{ lang.label }}
+              </span>
+            </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </nav>
+  } @else {
+    <button mat-icon-button [matMenuTriggerFor]="mobileMenu" aria-label="Open navigation menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <mat-menu #mobileMenu="matMenu">
+      <button mat-menu-item (click)="scrollTo('section-home')">
+        <mat-icon>home</mat-icon>
+        <span>{{'nav.home' | translate}}</span>
+      </button>
+      <button mat-menu-item (click)="scrollTo('section-about')">
+        <mat-icon>person</mat-icon>
+        <span>{{'nav.about' | translate}}</span>
+      </button>
+      <button mat-menu-item (click)="scrollTo('section-projects')">
+        <mat-icon>work</mat-icon>
+        <span>{{'nav.projects' | translate}}</span>
+      </button>
+      <button mat-menu-item (click)="scrollTo('section-experiences')">
+        <mat-icon>history_edu</mat-icon>
+        <span>{{'nav.experiences' | translate}}</span>
+      </button>
+      <button mat-menu-item (click)="scrollTo('section-contact')">
+        <mat-icon>contact_mail</mat-icon>
+        <span>{{'nav.contact' | translate}}</span>
+      </button>
+      <mat-divider></mat-divider>
+      <a mat-menu-item [href]="cvUrl()" download>
+        <mat-icon>download</mat-icon>
+        <span>{{'nav.download' | translate}}</span>
+      </a>
+      <mat-divider></mat-divider>
+      @for (lang of languages; track lang.locale) {
+        <button mat-menu-item (click)="onLanguageChange(lang.locale)" [class.active-lang]="translation.currentLang() === lang.locale">
+          <span class="lang-option">
+            <img [src]="lang.icon" [alt]="lang.label" class="flag-icon" />
+            {{ lang.label }}
+          </span>
+        </button>
+      }
+    </mat-menu>
+  }
 </mat-toolbar>

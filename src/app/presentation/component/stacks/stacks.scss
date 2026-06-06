@@ -26,3 +26,19 @@ mat-panel-title {
   object-fit: contain;
   flex-shrink: 0;
 }
+
+@media (max-width: 499px) {
+  .stack-list {
+    gap: 6px;
+
+    li {
+      font-size: 13px;
+      gap: 8px;
+    }
+  }
+
+  .stack-icon {
+    width: 18px;
+    height: 18px;
+  }
+}

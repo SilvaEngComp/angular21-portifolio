@@ -80,3 +80,22 @@
   flex-shrink: 0;
 }
 
+@media (max-width: 499px) {
+  .topbar {
+    padding: 8px 10px !important;
+    min-height: 52px;
+    gap: 4px;
+  }
+
+  .brand {
+    strong {
+      font-size: 13px;
+    }
+  }
+}
+
+.active-lang {
+  font-weight: 700;
+  opacity: 1 !important;
+}
+
