@@ -4,6 +4,22 @@
   min-height: 420px;
 }
 
+@media (max-width: 499px) {
+  .image-card {
+    min-height: 220px;
+  }
+
+  .image-block {
+    min-height: 200px;
+    border-radius: 16px;
+  }
+
+  .image-label {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+}
+
 .image-label {
   text-transform: uppercase;
   letter-spacing: 0.18em;

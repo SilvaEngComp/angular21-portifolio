@@ -32,3 +32,20 @@
   }
 }
 
+@media (max-width: 499px) {
+  .certifications-container {
+    h2 {
+      font-size: 0.95rem;
+    }
+
+    span[matListItemTitle] {
+      font-size: 13px;
+    }
+
+    mat-list-item {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+  }
+}
+

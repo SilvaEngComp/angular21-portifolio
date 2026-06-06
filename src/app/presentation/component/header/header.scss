@@ -80,3 +80,47 @@
   flex-shrink: 0;
 }
 
+@media (max-width: 499px) {
+  .topbar {
+    padding: 8px 10px !important;
+    min-height: 52px;
+    gap: 4px;
+  }
+
+  .brand {
+    strong {
+      font-size: 13px;
+    }
+  }
+
+  .contact-info {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 2px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+
+    button {
+      font-size: 11px;
+      padding: 0 4px;
+      min-width: unset;
+    }
+
+    a[mat-raised-button] {
+      font-size: 11px;
+      padding: 0 8px;
+
+      mat-icon {
+        display: none;
+      }
+    }
+  }
+
+  .lang-select {
+    width: 90px;
+    margin-left: 4px;
+  }
+}
+

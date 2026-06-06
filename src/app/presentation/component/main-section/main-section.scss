@@ -49,3 +49,23 @@ section {
     }
   }
 }
+
+@media (max-width: 499px) {
+  section {
+    margin-top: 24px;
+
+    .main-content {
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+
+      span {
+        font-size: 13px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  }
+}

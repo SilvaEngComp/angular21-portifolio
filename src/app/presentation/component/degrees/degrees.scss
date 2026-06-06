@@ -40,3 +40,35 @@
   }
 }
 
+@media (max-width: 499px) {
+  .degrees-container {
+    h2 {
+      font-size: 1rem;
+      margin: 0 0 4px 0;
+    }
+
+    span[matListItemTitle] {
+      font-size: 13px;
+    }
+
+    span[matListItemLine] {
+      font-size: 12px;
+    }
+
+    mat-list-item {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+
+    .institution-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .institution-logo {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+
