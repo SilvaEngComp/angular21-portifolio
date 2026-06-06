@@ -2,52 +2,58 @@
   <app-header></app-header>
 
   <div id="section-home" class="bento-grid">
-    <mat-card id="section-about" class="grid-item about">
+    <mat-card scrollReveal id="section-about" class="grid-item about">
       <mat-card-content>
         <app-about></app-about>
       </mat-card-content>
     </mat-card>
 
-    <mat-card class="grid-item image">
+    <mat-card scrollReveal class="grid-item image">
       <mat-card-content>
         <app-portrait></app-portrait>
       </mat-card-content>
     </mat-card>
 
-    <mat-card class="grid-item stacks-card">
+    <mat-card scrollReveal class="grid-item stacks-card">
       <mat-card-content>
         <app-stacks></app-stacks>
       </mat-card-content>
     </mat-card>
 
-    <mat-card id="section-contact" class="grid-item contact">
+    <mat-card scrollReveal id="section-contact" class="grid-item contact">
       <mat-card-content>
         <app-contact></app-contact>
       </mat-card-content>
     </mat-card>
 
-    <mat-card id="section-projects" class="grid-item feature">
+    <mat-card scrollReveal id="section-projects" class="grid-item feature">
       <mat-card-content>
         <app-projects></app-projects>
       </mat-card-content>
     </mat-card>
 
-    <mat-card id="section-experiences" class="grid-item narrative">
+    <mat-card scrollReveal id="section-experiences" class="grid-item narrative">
       <mat-card-content>
         <app-experiences></app-experiences>
       </mat-card-content>
     </mat-card>
 
-    <mat-card class="grid-item degrees-card">
+    <mat-card scrollReveal class="grid-item degrees-card">
       <mat-card-content>
         <app-degrees></app-degrees>
       </mat-card-content>
     </mat-card>
 
-    <mat-card class="grid-item list">
+    <mat-card scrollReveal class="grid-item list">
       <mat-card-content>
         <app-certifications></app-certifications>
       </mat-card-content>
     </mat-card>
   </div>
+
+  @if (showScrollTop()) {
+    <button mat-fab class="scroll-top-fab" (click)="scrollToTop()" aria-label="Scroll to top">
+      <mat-icon>keyboard_arrow_up</mat-icon>
+    </button>
+  }
 </div>

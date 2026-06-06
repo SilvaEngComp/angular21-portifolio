@@ -6,23 +6,27 @@
   }
 
   .project-list {
+    display: block;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 12px;
+  }
+
+  .repo-chips {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
 
-    mat-card {
-      mat-card-content p {
-        margin: 0;
-        font-size: 14px;
-        line-height: 1.6;
-      }
-
-      .btn-icon {
-        width: 16px;
-        height: 16px;
-        object-fit: contain;
-        vertical-align: middle;
-      }
+    .chip-icon {
+      width: 14px;
+      height: 14px;
+      object-fit: contain;
+      vertical-align: middle;
+      margin-right: 4px;
     }
   }
 }
@@ -34,12 +38,8 @@
       margin: 0 0 10px 0;
     }
 
-    .project-list {
-      gap: 8px;
-
-      mat-card mat-card-content p {
-        font-size: 13px;
-      }
+    p {
+      font-size: 13px;
     }
   }
 }
