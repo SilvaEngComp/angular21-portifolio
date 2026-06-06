@@ -93,32 +93,7 @@
     }
   }
 
-  .contact-info {
-    display: none;
-  }
-
-  .nav-links {
-    gap: 2px;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-
-    button {
-      font-size: 11px;
-      padding: 0 4px;
-      min-width: unset;
-    }
-
-    a[mat-raised-button] {
-      font-size: 11px;
-      padding: 0 8px;
-
-      mat-icon {
-        display: none;
-      }
-    }
-  }
-
-  .lang-select {
+  .lang-select--mobile {
     width: 90px;
     margin-left: 4px;
   }

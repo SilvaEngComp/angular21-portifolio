@@ -1,23 +1,35 @@
-import { Component, inject, computed } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, inject, computed, signal, HostListener, PLATFORM_ID } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
 import { TranslatePipe } from '../../../i18n/translate.pipe';
 import { TranslationService } from '../../../i18n/translation.service';
 import { Locale } from '../../../i18n/translations';
 
 @Component({
   selector: 'app-header',
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatSelectModule, MatFormFieldModule, TranslatePipe],
+  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatSelectModule, MatFormFieldModule, MatMenuModule, MatDividerModule, TranslatePipe],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class Header {
   readonly translation = inject(TranslationService);
   private readonly document = inject(DOCUMENT);
+  private readonly platformId = inject(PLATFORM_ID);
+
+  readonly isMobile = signal(
+    isPlatformBrowser(this.platformId) ? window.innerWidth < 500 : false
+  );
+
+  @HostListener('window:resize')
+  onResize(): void {
+    this.isMobile.set(window.innerWidth < 500);
+  }
 
   readonly languages: { locale: Locale; icon: string; label: string }[] = [
     {
