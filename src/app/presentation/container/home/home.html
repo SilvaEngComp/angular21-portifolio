@@ -50,4 +50,10 @@
       </mat-card-content>
     </mat-card>
   </div>
+
+  @if (showScrollTop()) {
+    <button mat-fab class="scroll-top-fab" (click)="scrollToTop()" aria-label="Scroll to top">
+      <mat-icon>keyboard_arrow_up</mat-icon>
+    </button>
+  }
 </div>
