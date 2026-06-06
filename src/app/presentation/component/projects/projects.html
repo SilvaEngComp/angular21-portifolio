@@ -1,74 +1,77 @@
 <div class="projects-container">
   <h2 class="mat-headline-small">{{'projects.title' | translate}}</h2>
-  <div class="project-list">
-    <mat-card appearance="outlined">
-      <mat-card-header>
-        <mat-card-title>{{'projects.li_1' | translate}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>{{'projects.li_1_desc' | translate}}</p>
-      </mat-card-content>
-    </mat-card>
-    <mat-card appearance="outlined">
-      <mat-card-header>
-        <mat-card-title>{{'projects.li_2' | translate}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>{{'projects.li_2_desc' | translate}}</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <a mat-button href="https://github.com/SilvaEngComp/commum_churche_app/tree/main" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="GitHub" class="btn-icon" /> commum_churche_app
+  <mat-accordion class="project-list">
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{'projects.li_1' | translate}}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>{{'projects.li_1_desc' | translate}}</p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{'projects.li_2' | translate}}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>{{'projects.li_2_desc' | translate}}</p>
+      <mat-chip-set class="repo-chips">
+        <a mat-chip href="https://github.com/SilvaEngComp/commum_churche_app/tree/main" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
+          commum_churche_app
         </a>
-      </mat-card-actions>
-    </mat-card>
-    <mat-card appearance="outlined">
-      <mat-card-header>
-        <mat-card-title>{{'projects.li_3' | translate}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>{{'projects.li_3_desc' | translate}}</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <a mat-button href="https://github.com/SilvaEngComp/ecommerce-ms-clients" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="GitHub" class="btn-icon" /> ms-clients
+      </mat-chip-set>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{'projects.li_3' | translate}}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>{{'projects.li_3_desc' | translate}}</p>
+      <mat-chip-set class="repo-chips">
+        <a mat-chip href="https://github.com/SilvaEngComp/ecommerce-ms-clients" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
+          ms-clients
         </a>
-        <a mat-button href="https://github.com/SilvaEngComp/ecommerce-ms-products" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="GitHub" class="btn-icon" /> ms-products
+        <a mat-chip href="https://github.com/SilvaEngComp/ecommerce-ms-products" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
+          ms-products
         </a>
-        <a mat-button href="https://github.com/SilvaEngComp/ecommerce-ms-orders" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="GitHub" class="btn-icon" /> ms-orders
+        <a mat-chip href="https://github.com/SilvaEngComp/ecommerce-ms-orders" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
+          ms-orders
         </a>
-      </mat-card-actions>
-    </mat-card>
-    <mat-card appearance="outlined">
-      <mat-card-header>
-        <mat-card-title>{{'projects.li_4' | translate}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>{{'projects.li_4_desc' | translate}}</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <a mat-button href="https://github.com/SilvaEngComp/RFoT" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="GitHub" class="btn-icon" /> RFoT
+      </mat-chip-set>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{'projects.li_4' | translate}}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>{{'projects.li_4_desc' | translate}}</p>
+      <mat-chip-set class="repo-chips">
+        <a mat-chip href="https://github.com/SilvaEngComp/RFoT" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
+          RFoT
         </a>
-      </mat-card-actions>
-    </mat-card>
-    <mat-card appearance="outlined">
-      <mat-card-header>
-        <mat-card-title>{{'projects.li_5' | translate}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>{{'projects.li_5_desc' | translate}}</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <a mat-button href="https://github.com/SilvaEngComp/chatBot_app_ionic" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="GitHub" class="btn-icon" /> chatBot_app_ionic
+      </mat-chip-set>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{'projects.li_5' | translate}}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>{{'projects.li_5_desc' | translate}}</p>
+      <mat-chip-set class="repo-chips">
+        <a mat-chip href="https://github.com/SilvaEngComp/chatBot_app_ionic" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
+          chatBot_app_ionic
         </a>
-        <a mat-button href="https://github.com/SilvaEngComp/chatBot_api_laravel" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="GitHub" class="btn-icon" /> chatBot_api_laravel
+        <a mat-chip href="https://github.com/SilvaEngComp/chatBot_api_laravel" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
+          chatBot_api_laravel
         </a>
-      </mat-card-actions>
-    </mat-card>
-  </div>
+      </mat-chip-set>
+    </mat-expansion-panel>
+
+  </mat-accordion>
 </div>
