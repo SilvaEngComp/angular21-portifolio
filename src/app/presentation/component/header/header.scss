@@ -92,10 +92,10 @@
       font-size: 13px;
     }
   }
+}
 
-  .lang-select--mobile {
-    width: 90px;
-    margin-left: 4px;
-  }
+.active-lang {
+  font-weight: 700;
+  opacity: 1 !important;
 }
 

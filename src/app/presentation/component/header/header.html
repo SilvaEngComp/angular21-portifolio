@@ -42,23 +42,6 @@
       </mat-form-field>
     </nav>
   } @else {
-    <mat-form-field class="lang-select lang-select--mobile" appearance="outline" subscriptSizing="dynamic">
-      <mat-select
-        [value]="translation.currentLang()"
-        (valueChange)="onLanguageChange($event)"
-        aria-label="Select language"
-      >
-        @for (lang of languages; track lang.locale) {
-          <mat-option [value]="lang.locale">
-            <span class="lang-option">
-              <img [src]="lang.icon" [alt]="lang.label" class="flag-icon" />
-              {{ lang.label }}
-            </span>
-          </mat-option>
-        }
-      </mat-select>
-    </mat-form-field>
-
     <button mat-icon-button [matMenuTriggerFor]="mobileMenu" aria-label="Open navigation menu">
       <mat-icon>menu</mat-icon>
     </button>
@@ -89,6 +72,15 @@
         <mat-icon>download</mat-icon>
         <span>{{'nav.download' | translate}}</span>
       </a>
+      <mat-divider></mat-divider>
+      @for (lang of languages; track lang.locale) {
+        <button mat-menu-item (click)="onLanguageChange(lang.locale)" [class.active-lang]="translation.currentLang() === lang.locale">
+          <span class="lang-option">
+            <img [src]="lang.icon" [alt]="lang.label" class="flag-icon" />
+            {{ lang.label }}
+          </span>
+        </button>
+      }
     </mat-menu>
   }
 </mat-toolbar>
