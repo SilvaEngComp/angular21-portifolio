@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { TranslatePipe } from '../../../i18n/translate.pipe';
-import { PortraitComponent } from '../portrait/portrait';
+import { ScrollRevealDirective } from '../../directive/scroll-reveal.directive';
 
 @Component({
   selector: 'app-about',
-  imports: [TranslatePipe, PortraitComponent],
+  imports: [TranslatePipe, ScrollRevealDirective],
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })

@@ -1,5 +1,5 @@
 <section class="hero-card" id="about">
-  <div class="about-intro">
+  <div class="about-intro" scrollReveal [scrollRevealDelay]="0">
     <div class="about-headline">
       <div class="mat-overline eyebrow">{{'about.eyebrow' | translate}}</div>
       <h1 class="mat-headline-large">{{'about.title' | translate}}</h1>
@@ -7,7 +7,7 @@
   </div>
 
   <div class="story-sections">
-    <div class="story-section">
+    <div class="story-section" scrollReveal [scrollRevealDelay]="100">
       <div class="story-content">
         <h3 class="story-heading">{{'about.beginning.title' | translate}}</h3>
         <p class="story-text">{{'about.beginning.text' | translate}}</p>
@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div class="story-section">
+    <div class="story-section" scrollReveal [scrollRevealDelay]="100">
       <div class="story-content">
         <h3 class="story-heading">{{'about.career.title' | translate}}</h3>
         <p class="story-text">{{'about.career.text' | translate}}</p>
@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <div class="story-section">
+    <div class="story-section" scrollReveal [scrollRevealDelay]="100">
       <div class="story-content">
         <h3 class="story-heading">{{'about.background.title' | translate}}</h3>
         <p class="story-text">{{'about.background.text' | translate}}</p>
@@ -37,7 +37,7 @@
       </div>
     </div>
 
-    <div class="story-section story-section--full">
+    <div class="story-section story-section--full" scrollReveal [scrollRevealDelay]="100">
       <div class="story-content">
         <h3 class="story-heading">{{'about.future.title' | translate}}</h3>
         <p class="story-text">{{'about.future.text' | translate}}</p>

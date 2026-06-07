@@ -328,3 +328,26 @@ p {
   }
 }
 
+// ─── Scroll-reveal animations (all breakpoints) ───────────────────────────────
+.about-intro.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-intro.scroll-reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.story-section.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.story-section.scroll-reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
