@@ -25,10 +25,10 @@ describe('DegreesComponent', () => {
     expect(component.entries.length).toBe(4);
   });
 
-  it('each entry should have titleKey, line and fallbackIcon', () => {
+  it('each entry should have institution, degree and fallbackIcon', () => {
     for (const entry of component.entries) {
-      expect(entry.titleKey).toBeTruthy();
-      expect(entry.line).toBeTruthy();
+      expect(entry.institution).toBeTruthy();
+      expect(entry.degree).toBeTruthy();
       expect(entry.fallbackIcon).toBeTruthy();
     }
   });
