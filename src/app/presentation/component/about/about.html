@@ -1,8 +1,20 @@
 <section class="hero-card" id="about">
   <div class="about-intro" scrollReveal [scrollRevealDelay]="0">
     <div class="about-headline">
-      <div class="mat-overline eyebrow">{{'about.eyebrow' | translate}}</div>
-      <h1 class="mat-headline-large">{{'about.title' | translate}}</h1>
+      <div class="slide-text" [class.slide-text--hidden]="!isVisible()">
+        <div class="mat-overline eyebrow">{{ slides[currentSlideIndex()].eyebrow | translate }}</div>
+        <h1 class="mat-headline-large">{{ slides[currentSlideIndex()].title | translate }}</h1>
+      </div>
+      <div class="slide-dots">
+        @for (slide of slides; track $index) {
+          <button
+            class="slide-dot"
+            [class.slide-dot--active]="currentSlideIndex() === $index"
+            (click)="goToSlide($index)"
+            [attr.aria-label]="'Slide ' + ($index + 1)"
+          ></button>
+        }
+      </div>
     </div>
   </div>
 
