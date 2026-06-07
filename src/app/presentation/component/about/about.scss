@@ -27,8 +27,42 @@ p {
   font-size: 0.95rem;
 }
 
+// ─── Narrative story sections ─────────────────────────────────────────────────
+.story-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 620px;
+}
+
+.story-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.story-heading {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 97, 150, 0.8);
+  margin: 0;
+}
+
+.story-text {
+  margin: 0;
+  max-width: 620px;
+  line-height: 1.9;
+  opacity: 0.78;
+  font-size: 0.95rem;
+}
+
 @media (max-width: 1079px) {
-  p {
+  p, .story-text, .story-sections {
     max-width: 100%;
   }
 }
@@ -42,8 +76,18 @@ p {
     font-size: clamp(1.5rem, 7vw, 2.2rem);
   }
 
-  p {
+  p, .story-text {
     font-size: 14px;
+  }
+
+  .story-sections {
+    gap: 28px;
+    margin-top: 32px;
+    padding-top: 28px;
+  }
+
+  .story-heading {
+    font-size: 0.68rem;
   }
 }
 
