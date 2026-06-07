@@ -152,4 +152,20 @@ Além da tecnologia, estou comprometido em evoluir como líder — desenvolvendo
   'stacks.testing': { en: 'Unit Tests (JUnit, Jest, Jasmine, Mockito), Manual & Automation E2E (Cucumber), Gherkin, Postman', pt: 'Testes Unitários (JUnit, Jest, Jasmine, Mockito), E2E Manual & Automação (Cucumber), Gherkin, Postman' },
   'stacks.tools': { en: 'Jira, Confluence, GitHub, GitLab, Bitbucket, Figma, Copilot Agent Creation, Documentation', pt: 'Jira, Confluence, GitHub, GitLab, Bitbucket, Figma, Criação de Agentes Copilot, Documentação' },
   'contact.title': { en: 'Contact Me', pt: 'Fale Comigo' },
+
+  'degrees.unipds.institution': { en: 'UNIPDS Educação', pt: 'UNIPDS Educação' },
+  'degrees.unipds.degree': { en: 'Postgraduate · Java Elite', pt: 'Pós-graduação · Java Elite' },
+  'degrees.unipds.summary': { en: 'Advanced modern Java development and architecture — Spring Boot, Quarkus, Kafka, AWS, and DevOps practices.', pt: 'Desenvolvimento avançado de Java moderno e arquitetura — Spring Boot, Quarkus, Kafka, AWS e práticas de DevOps.' },
+
+  'degrees.ufba.institution': { en: 'Federal University of Bahia', pt: 'Universidade Federal da Bahia' },
+  'degrees.ufba.degree': { en: "Master's · Computer Science", pt: 'Mestrado · Ciência da Computação' },
+  'degrees.ufba.summary': { en: 'Dissertation: research on a framework integrating IoT devices, blockchain, smart contracts, and ML for reliable data validation.', pt: 'Dissertação: pesquisa sobre um framework integrando dispositivos IoT, blockchain, contratos inteligentes e ML para validação confiável de dados.' },
+
+  'degrees.igti.institution': { en: 'IGTI — Information & Management Technology Institute', pt: 'IGTI — Instituto de Tecnologia da Informação e Gestão' },
+  'degrees.igti.degree': { en: 'MBA · Cyber Security', pt: 'MBA · Cibersegurança' },
+  'degrees.igti.summary': { en: 'Advanced security strategies to enhance web application resilience against modern threats.', pt: 'Estratégias avançadas de segurança para fortalecer a resiliência de aplicações web contra ameaças modernas.' },
+
+  'degrees.ufrb.institution': { en: 'Federal University of Recôncavo da Bahia', pt: 'Universidade Federal do Recôncavo da Bahia' },
+  'degrees.ufrb.degree': { en: 'Bachelor · Computer Engineering', pt: 'Bacharelado · Engenharia de Computação' },
+  'degrees.ufrb.summary': { en: 'TCC: stress level identification using ECG signal processing and machine learning algorithms.', pt: 'TCC: identificação do nível de estresse por meio de processamento de sinais de ECG e algoritmos de aprendizado de máquina.' },
 };

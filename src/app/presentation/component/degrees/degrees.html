@@ -18,12 +18,12 @@
       <div class="deg-card">
         <div class="deg-card-header">
           <div class="deg-info">
-            <h3 class="deg-degree">{{ entry.degree }}</h3>
-            <p class="deg-institution">{{ entry.institution }}</p>
+            <h3 class="deg-degree">{{ entry.degree | translate }}</h3>
+            <p class="deg-institution">{{ entry.institution | translate }}</p>
           </div>
           <span class="deg-date">{{ entry.date }}</span>
         </div>
-        <p class="deg-summary">{{ entry.summary }}</p>
+        <p class="deg-summary">{{ entry.summary | translate }}</p>
       </div>
     </div>
   }
