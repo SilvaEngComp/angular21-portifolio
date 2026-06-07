@@ -12,12 +12,18 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
   constructor() {
     // Defer observer setup until after the first render + browser layout,
     // so that elements have their final positions (below the fold).
-    // In production builds all components initialise synchronously in one
-    // render tick; setting up IntersectionObserver in ngOnInit causes it to
-    // fire immediately (all elements are temporarily at y=0), marking every
-    // section as visible before the layout settles — breaking the animation.
+    //
+    // afterNextRender fires after Angular's change-detection cycle, but the
+    // browser may not have completed CSS layout yet — elements temporarily sit
+    // at y=0, causing IntersectionObserver to fire for every element (all appear
+    // "in viewport") and skip the animation.
+    //
+    // A requestAnimationFrame inside afterNextRender guarantees we wait for at
+    // least one complete browser layout/paint frame before observing, so only
+    // truly in-viewport elements fire immediately; below-fold elements wait for
+    // the user to scroll.
     afterNextRender(() => {
-      this.setupObserver();
+      requestAnimationFrame(() => this.setupObserver());
     });
   }
 

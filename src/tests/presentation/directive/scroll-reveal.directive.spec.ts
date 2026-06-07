@@ -26,6 +26,8 @@ describe('ScrollRevealDirective', () => {
       return { observe: mockObserve, unobserve: mockUnobserve, disconnect: mockDisconnect };
     }
     vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
+    // Make rAF synchronous so afterNextRender(() => rAF(() => setup)) runs in tests
+    vi.stubGlobal('requestAnimationFrame', (cb: FrameRequestCallback) => { cb(0); return 0; });
   });
 
   afterAll(() => {
