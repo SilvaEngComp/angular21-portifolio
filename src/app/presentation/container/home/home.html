@@ -25,38 +25,38 @@
 
     <div class="timeline-track">
       <section class="chapter chapter--standard" id="chapter-experiences">
-        <div class="chapter-inner" scrollReveal>
+        <div class="chapter-inner" scrollReveal [scrollRevealAnimation]="'fadeInLeft'">
           <app-experiences></app-experiences>
         </div>
       </section>
 
       <section class="chapter chapter--standard" id="chapter-projects">
-        <div class="chapter-inner" scrollReveal>
+        <div class="chapter-inner" scrollReveal [scrollRevealAnimation]="'fadeInUp'">
           <app-projects></app-projects>
         </div>
       </section>
 
       <section class="chapter chapter--standard" id="chapter-skills">
-        <div class="chapter-inner" scrollReveal>
+        <div class="chapter-inner" scrollReveal [scrollRevealAnimation]="'fadeInRight'">
           <app-stacks></app-stacks>
         </div>
       </section>
 
       <section class="chapter chapter--standard" id="chapter-certifications">
-        <div class="chapter-inner" scrollReveal>
+        <div class="chapter-inner" scrollReveal [scrollRevealAnimation]="'fadeInLeft'">
           <app-certifications></app-certifications>
         </div>
       </section>
 
       <section class="chapter chapter--standard" id="chapter-education">
-        <div class="chapter-inner" scrollReveal>
+        <div class="chapter-inner" scrollReveal [scrollRevealAnimation]="'fadeInRight'">
           <app-degrees></app-degrees>
         </div>
       </section>
     </div>
 
     <section class="chapter chapter--cta" id="chapter-contact">
-      <div class="chapter-inner chapter-inner--cta" scrollReveal>
+      <div class="chapter-inner chapter-inner--cta" scrollReveal [scrollRevealAnimation]="'zoomIn'">
         <app-contact></app-contact>
       </div>
     </section>

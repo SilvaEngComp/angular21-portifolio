@@ -2,7 +2,7 @@
   <h2 class="chapter-heading">Tech Stack</h2>
 
   @for (cat of categories; track cat.id; let last = $last; let i = $index) {
-    <div class="stack-node" [class.stack-node--last]="last" scrollReveal [scrollRevealDelay]="i * 100">
+    <div class="stack-node" [class.stack-node--last]="last" scrollReveal [scrollRevealAnimation]="'fadeInRight'" [scrollRevealDelay]="i * 100">
       <div class="node-track">
         <div class="node-badge {{cat.iconClass}}">
           <mat-icon>{{ cat.icon }}</mat-icon>

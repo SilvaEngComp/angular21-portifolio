@@ -47,32 +47,33 @@ describe('ScrollRevealDirective', () => {
     fixture.detectChanges();
   });
 
-  it('should add scroll-reveal class on init', () => {
+  it('should set opacity to 0 on init', () => {
     const el: HTMLElement = fixture.nativeElement.querySelector('[scrollReveal]');
-    expect(el.classList.contains('scroll-reveal')).toBe(true);
+    expect(el.style.opacity).toBe('0');
   });
 
   it('should call observe on the host element', () => {
     expect(mockObserve).toHaveBeenCalled();
   });
 
-  it('should add scroll-reveal--visible and call unobserve when entry is intersecting', () => {
+  it('should add animate__animated and default animation class and call unobserve when entry is intersecting', () => {
     const el: HTMLElement = fixture.nativeElement.querySelector('[scrollReveal]');
     capturedCallback(
       [{ isIntersecting: true, target: el } as unknown as IntersectionObserverEntry],
       {} as IntersectionObserver
     );
-    expect(el.classList.contains('scroll-reveal--visible')).toBe(true);
+    expect(el.classList.contains('animate__animated')).toBe(true);
+    expect(el.classList.contains('animate__fadeInUp')).toBe(true);
     expect(mockUnobserve).toHaveBeenCalledWith(el);
   });
 
-  it('should not add scroll-reveal--visible when entry is not intersecting', () => {
+  it('should not add animate__animated when entry is not intersecting', () => {
     const el: HTMLElement = fixture.nativeElement.querySelector('[scrollReveal]');
     capturedCallback(
       [{ isIntersecting: false, target: el } as unknown as IntersectionObserverEntry],
       {} as IntersectionObserver
     );
-    expect(el.classList.contains('scroll-reveal--visible')).toBe(false);
+    expect(el.classList.contains('animate__animated')).toBe(false);
   });
 
   it('should call disconnect on destroy', () => {
