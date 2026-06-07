@@ -5,13 +5,14 @@ export const TRANSLATIONS: Record<string, Record<Locale, string>> = {
   'nav.about': { en: 'About', pt: 'Sobre' },
   'nav.projects': { en: 'Projects', pt: 'Projetos' },
   'nav.experiences': { en: 'Experiences', pt: 'Experiências' },
+  'nav.education': { en: 'Education', pt: 'Educação' },
   'nav.contact': { en: 'Contact me', pt: 'Contato' },
   'nav.resume': { en: 'Resume', pt: 'Currículo' },
   'nav.language': { en: 'Language', pt: 'Idioma' },
   'nav.download': { en: 'Download', pt: 'Baixar' },
   'nav.skills': { en: 'Skills', pt: 'Habilidades' },
   'nav.certifications': { en: 'Certifications', pt: 'Certificações' },
-  'about.eyebrow': { en: 'Senior Software Engineer • Fullstack Developer • Tech Lead', pt: 'Engenheiro de Software Sênior • Fullstack Developer • Tech Lead' },
+  'about.eyebrow': { en: 'Senior Software Engineer • Fullstack Developer • Tech Lead • Architect ', pt: 'Engenheiro de Software Sênior • Fullstack Developer • Tech Lead • Arquiteto' },
   'about.beginning.title': { en: 'My Beginning', pt: 'Meu Início' },
   'about.beginning.text': { en: `While I was completing my studies, I was accepted into a university and began my career as a Computer Science instructor. In this role, I taught introductory programming courses to students in their early semesters.
 
