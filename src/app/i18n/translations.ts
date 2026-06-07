@@ -13,6 +13,16 @@ export const TRANSLATIONS: Record<string, Record<Locale, string>> = {
   'nav.skills': { en: 'Skills', pt: 'Habilidades' },
   'nav.certifications': { en: 'Certifications', pt: 'Certificações' },
   'about.eyebrow': { en: 'Senior Software Engineer • Fullstack Developer • Tech Lead • Architect ', pt: 'Engenheiro de Software Sênior • Fullstack Developer • Tech Lead • Arquiteto' },
+  'about.slide1.eyebrow': { en: 'Senior Software Engineer', pt: 'Engenheiro de Software Sênior' },
+  'about.slide1.title':   { en: 'Angular · JavaScript | Java · Spring Boot', pt: 'Angular · JavaScript | Java · Spring Boot' },
+  'about.slide2.eyebrow': { en: 'Tech Lead & Software Architect', pt: 'Tech Lead & Arquiteto de Software' },
+  'about.slide2.title':   { en: 'Microservices · Cloud Native | AWS · Azure', pt: 'Microsserviços · Cloud Native | AWS · Azure' },
+  'about.slide3.eyebrow': { en: 'Fullstack & Mobile Developer', pt: 'Desenvolvedor Fullstack & Mobile' },
+  'about.slide3.title':   { en: 'Angular · Ionic | Java · PHP | REST APIs', pt: 'Angular · Ionic | Java · PHP | REST APIs' },
+  'about.slide4.eyebrow': { en: 'Mentor & Community Builder', pt: 'Mentor & Construtor de Comunidade' },
+  'about.slide4.title':   { en: '100+ Professionals Mentored | Career Reboot', pt: '100+ Profissionais Mentorados | Career Reboot' },
+  'about.slide5.eyebrow': { en: 'AI & Agentic Systems Engineer', pt: 'Engenheiro de IA & Sistemas Agênticos' },
+  'about.slide5.title':   { en: 'GitHub Copilot · LLM Agents | AI-Driven Dev', pt: 'GitHub Copilot · Agentes LLM | Dev Orientado a IA' },
   'about.beginning.title': { en: 'My Beginning', pt: 'Meu Início' },
   'about.beginning.text': { en: `While I was completing my studies, I was accepted into a university and began my career as a Computer Science instructor. In this role, I taught introductory programming courses to students in their early semesters.
 
