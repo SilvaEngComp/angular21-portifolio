@@ -22,10 +22,17 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    // Apply the hidden state synchronously so there is no flash of content
-    // before the observer takes over.
+    // Apply the hidden state via inline styles so it takes effect immediately,
+    // independent of whether the global stylesheet has been parsed yet.
+    // Angular's production build defers the global CSS asynchronously via
+    // Beasties (critical CSS inlining), meaning class-based styles may not be
+    // available when IntersectionObserver fires — causing all elements to appear
+    // "intersecting" and skip the animation. Inline styles bypass this race.
     const native: HTMLElement = this.el.nativeElement;
     native.classList.add('scroll-reveal');
+    native.style.opacity = '0';
+    native.style.transform = 'translateY(32px)';
+    native.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
 
     if (this.scrollRevealDelay) {
       native.style.transitionDelay = `${this.scrollRevealDelay}ms`;
@@ -39,6 +46,8 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
       ([entry]) => {
         if (entry.isIntersecting) {
           native.classList.add('scroll-reveal--visible');
+          native.style.opacity = '1';
+          native.style.transform = 'translateY(0)';
           this.observer?.unobserve(native);
         }
       },
