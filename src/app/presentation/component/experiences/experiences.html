@@ -1,71 +1,151 @@
-<div class="experiences-timeline">
+<div class="exp-timeline">
   <h2 class="chapter-heading">{{'experiences.title' | translate}}</h2>
 
-  <div class="timeline-node">
-    <div class="node-dot"></div>
-    <div class="node-body">
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>{{'experiences.capgemini.title' | translate}}</mat-panel-title>
-          <mat-panel-description>{{'experiences.capgemini.location' | translate}}</mat-panel-description>
-        </mat-expansion-panel-header>
-        <ul>
-          <li>{{'experiences.capgemini.line1' | translate}}</li>
-          <li>{{'experiences.capgemini.line2' | translate}}</li>
-          <li>{{'experiences.capgemini.line3' | translate}}</li>
-          <li>{{'experiences.capgemini.line4' | translate}}</li>
-          <li>{{'experiences.capgemini.line5' | translate}}</li>
-          <li>{{'experiences.capgemini.line6' | translate}}</li>
-          <li>{{'experiences.capgemini.line7' | translate}}</li>
-          <li>{{'experiences.capgemini.line8' | translate}}</li>
-          <li>{{'experiences.capgemini.line9' | translate}}</li>
-          <li>{{'experiences.capgemini.line10' | translate}}</li>
-          <li>{{'experiences.capgemini.line11' | translate}}</li>
-          <li>{{'experiences.capgemini.line12' | translate}}</li>
-        </ul>
-      </mat-expansion-panel>
+  <!-- Capgemini -->
+  <div class="exp-node">
+    <div class="node-track">
+      <div class="node-badge node-badge--architect"><mat-icon>workspace_premium</mat-icon></div>
+      <div class="node-line"></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-card-header">
+        <div class="exp-info">
+          <h3 class="exp-role">{{'experiences.capgemini.role' | translate}}</h3>
+          <p class="exp-company">{{'experiences.capgemini.title' | translate}}</p>
+        </div>
+        <span class="exp-date">{{'experiences.capgemini.date' | translate}}</span>
+      </div>
+      <p class="exp-summary">{{'experiences.capgemini.summary' | translate}}</p>
+      <div class="contributions-footer">
+        <div class="contributions-divider"></div>
+        <button class="contributions-toggle" (click)="toggle('capgemini')">
+          <span>My contributions</span>
+          <mat-icon>{{ isExpanded('capgemini') ? 'expand_less' : 'expand_more' }}</mat-icon>
+        </button>
+        @if (isExpanded('capgemini')) {
+          <ul class="contributions-list">
+            <li>{{'experiences.capgemini.line1' | translate}}</li>
+            <li>{{'experiences.capgemini.line2' | translate}}</li>
+            <li>{{'experiences.capgemini.line3' | translate}}</li>
+            <li>{{'experiences.capgemini.line4' | translate}}</li>
+            <li>{{'experiences.capgemini.line5' | translate}}</li>
+            <li>{{'experiences.capgemini.line6' | translate}}</li>
+            <li>{{'experiences.capgemini.line7' | translate}}</li>
+            <li>{{'experiences.capgemini.line8' | translate}}</li>
+            <li>{{'experiences.capgemini.line9' | translate}}</li>
+            <li>{{'experiences.capgemini.line10' | translate}}</li>
+            <li>{{'experiences.capgemini.line11' | translate}}</li>
+            <li>{{'experiences.capgemini.line12' | translate}}</li>
+          </ul>
+        }
+      </div>
     </div>
   </div>
 
-  <div class="timeline-node">
-    <div class="node-dot"></div>
-    <div class="node-body">
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>{{'experiences.silva.title' | translate}}</mat-panel-title>
-          <mat-panel-description>{{'experiences.silva.location' | translate}}</mat-panel-description>
-        </mat-expansion-panel-header>
-        <ul>
-          <li>{{'experiences.silva.line1' | translate}}</li>
-          <li>{{'experiences.silva.line2' | translate}}</li>
-          <li>{{'experiences.silva.line3' | translate}}</li>
-          <li>{{'experiences.silva.line4' | translate}}</li>
-          <li>{{'experiences.silva.line5' | translate}}</li>
-          <li>{{'experiences.silva.line6' | translate}}</li>
-          <li>{{'experiences.silva.line7' | translate}}</li>
-          <li>{{'experiences.silva.line8' | translate}}</li>
-        </ul>
-      </mat-expansion-panel>
+  <!-- Silva and Queiroz -->
+  <div class="exp-node">
+    <div class="node-track">
+      <div class="node-badge node-badge--senior"><mat-icon>star</mat-icon></div>
+      <div class="node-line"></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-card-header">
+        <div class="exp-info">
+          <h3 class="exp-role">{{'experiences.silva.role' | translate}}</h3>
+          <p class="exp-company">{{'experiences.silva.title' | translate}}</p>
+        </div>
+        <span class="exp-date">{{'experiences.silva.date' | translate}}</span>
+      </div>
+      <p class="exp-summary">{{'experiences.silva.summary' | translate}}</p>
+      <div class="contributions-footer">
+        <div class="contributions-divider"></div>
+        <button class="contributions-toggle" (click)="toggle('silva')">
+          <span>My contributions</span>
+          <mat-icon>{{ isExpanded('silva') ? 'expand_less' : 'expand_more' }}</mat-icon>
+        </button>
+        @if (isExpanded('silva')) {
+          <ul class="contributions-list">
+            <li>{{'experiences.silva.line1' | translate}}</li>
+            <li>{{'experiences.silva.line2' | translate}}</li>
+            <li>{{'experiences.silva.line3' | translate}}</li>
+            <li>{{'experiences.silva.line4' | translate}}</li>
+            <li>{{'experiences.silva.line5' | translate}}</li>
+            <li>{{'experiences.silva.line6' | translate}}</li>
+            <li>{{'experiences.silva.line7' | translate}}</li>
+            <li>{{'experiences.silva.line8' | translate}}</li>
+          </ul>
+        }
+      </div>
     </div>
   </div>
 
-  <div class="timeline-node">
-    <div class="node-dot"></div>
-    <div class="node-body">
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>{{'experiences.professor.title' | translate}}</mat-panel-title>
-          <mat-panel-description>{{'experiences.professor.location' | translate}}</mat-panel-description>
-        </mat-expansion-panel-header>
-        <ul>
-          <li>{{'experiences.professor.line1' | translate}}</li>
-          <li>{{'experiences.professor.line2' | translate}}</li>
-          <li>{{'experiences.professor.line3' | translate}}</li>
-          <li>{{'experiences.professor.line4' | translate}}</li>
-          <li>{{'experiences.professor.line5' | translate}}</li>
-          <li>{{'experiences.professor.line6' | translate}}</li>
-        </ul>
-      </mat-expansion-panel>
+  <!-- Federal University 2019-2020 -->
+  <div class="exp-node">
+    <div class="node-track">
+      <div class="node-badge node-badge--educator"><mat-icon>school</mat-icon></div>
+      <div class="node-line"></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-card-header">
+        <div class="exp-info">
+          <h3 class="exp-role">{{'experiences.professor.role' | translate}}</h3>
+          <p class="exp-company">{{'experiences.professor.title' | translate}}</p>
+        </div>
+        <span class="exp-date">{{'experiences.professor.date' | translate}}</span>
+      </div>
+      <p class="exp-summary">{{'experiences.professor.summary' | translate}}</p>
+      <div class="contributions-footer">
+        <div class="contributions-divider"></div>
+        <button class="contributions-toggle" (click)="toggle('professor')">
+          <span>My contributions</span>
+          <mat-icon>{{ isExpanded('professor') ? 'expand_less' : 'expand_more' }}</mat-icon>
+        </button>
+        @if (isExpanded('professor')) {
+          <ul class="contributions-list">
+            <li>{{'experiences.professor.line1' | translate}}</li>
+            <li>{{'experiences.professor.line2' | translate}}</li>
+            <li>{{'experiences.professor.line3' | translate}}</li>
+            <li>{{'experiences.professor.line4' | translate}}</li>
+            <li>{{'experiences.professor.line5' | translate}}</li>
+            <li>{{'experiences.professor.line6' | translate}}</li>
+          </ul>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Secretary of Education -->
+  <div class="exp-node">
+    <div class="node-track">
+      <div class="node-badge node-badge--educator"><mat-icon>school</mat-icon></div>
+      <div class="node-line"></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-card-header">
+        <div class="exp-info">
+          <h3 class="exp-role">{{'experiences.secretary.role' | translate}}</h3>
+          <p class="exp-company">{{'experiences.secretary.title' | translate}}</p>
+        </div>
+        <span class="exp-date">{{'experiences.secretary.date' | translate}}</span>
+      </div>
+      <p class="exp-summary">{{'experiences.secretary.summary' | translate}}</p>
+    </div>
+  </div>
+
+  <!-- Federal University 2015-2017 -->
+  <div class="exp-node exp-node--last">
+    <div class="node-track">
+      <div class="node-badge node-badge--educator"><mat-icon>school</mat-icon></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-card-header">
+        <div class="exp-info">
+          <h3 class="exp-role">{{'experiences.professor2.role' | translate}}</h3>
+          <p class="exp-company">{{'experiences.professor2.title' | translate}}</p>
+        </div>
+        <span class="exp-date">{{'experiences.professor2.date' | translate}}</span>
+      </div>
+      <p class="exp-summary">{{'experiences.professor2.summary' | translate}}</p>
     </div>
   </div>
 </div>

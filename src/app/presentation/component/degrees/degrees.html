@@ -1,18 +1,29 @@
-<div class="education-timeline">
+<div class="deg-timeline">
   <h2 class="chapter-heading">{{'education.title' | translate}}</h2>
 
-  @for (entry of entries; track entry.titleKey) {
-    <div class="timeline-node">
-      <div class="node-dot">
-        @if (entry.logo) {
-          <img [src]="entry.logo" [alt]="entry.titleKey" class="degree-logo" />
-        } @else {
-          <mat-icon>{{ entry.fallbackIcon }}</mat-icon>
+  @for (entry of entries; track entry.id; let last = $last) {
+    <div class="deg-node" [class.deg-node--last]="last">
+      <div class="node-track">
+        <div class="node-badge">
+          @if (entry.logo) {
+            <img [src]="entry.logo" [alt]="entry.institution" class="badge-logo" />
+          } @else {
+            <mat-icon>{{ entry.fallbackIcon }}</mat-icon>
+          }
+        </div>
+        @if (!last) {
+          <div class="node-line"></div>
         }
       </div>
-      <div class="node-body">
-        <div class="node-title">{{ entry.titleKey | translate }}</div>
-        <div class="node-desc">{{ entry.line }}</div>
+      <div class="deg-card">
+        <div class="deg-card-header">
+          <div class="deg-info">
+            <h3 class="deg-degree">{{ entry.degree }}</h3>
+            <p class="deg-institution">{{ entry.institution }}</p>
+          </div>
+          <span class="deg-date">{{ entry.date }}</span>
+        </div>
+        <p class="deg-summary">{{ entry.summary }}</p>
       </div>
     </div>
   }
