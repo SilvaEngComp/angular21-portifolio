@@ -27,10 +27,10 @@ export class Home implements OnInit, OnDestroy {
   readonly chapters = [
     { id: 'chapter-hero',           label: 'nav.home' },
     { id: 'chapter-experiences',    label: 'nav.experiences' },
-    { id: 'chapter-education',      label: 'nav.about' },
     { id: 'chapter-projects',       label: 'nav.projects' },
     { id: 'chapter-skills',         label: 'nav.skills' },
     { id: 'chapter-certifications', label: 'nav.certifications' },
+    { id: 'chapter-education',      label: 'nav.about' },
     { id: 'chapter-contact',        label: 'nav.contact' },
   ];
 
