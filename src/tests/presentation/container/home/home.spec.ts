@@ -1,5 +1,6 @@
 import { Home } from './../../../../app/presentation/container/home/home';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { PLATFORM_ID } from '@angular/core';
 import { vi } from 'vitest';
 
 
@@ -174,5 +175,49 @@ describe('Home', () => {
     const fakeEntry = { isIntersecting: false, target: { id: 'chapter-experiences' } } as unknown as IntersectionObserverEntry;
     capturedCallback!([fakeEntry], null as unknown as IntersectionObserver);
     expect(component.activeChapter()).toBe(initial);
+  });
+});
+
+describe('Home - server platform (SSR)', () => {
+  let serverFixture: ComponentFixture<Home>;
+  let serverComponent: Home;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [Home],
+      providers: [{ provide: PLATFORM_ID, useValue: 'server' }],
+    }).compileComponents();
+
+    serverFixture = TestBed.createComponent(Home);
+    serverComponent = serverFixture.componentInstance;
+    await serverFixture.whenStable();
+  });
+
+  afterEach(() => {
+    serverFixture.destroy();
+  });
+
+  it('ngOnInit should not create IntersectionObserver on server platform', () => {
+    const constructorSpy = vi.fn();
+
+    class SpyIO {
+      observe = vi.fn();
+      unobserve = vi.fn();
+      disconnect = vi.fn();
+      constructor(cb: IntersectionObserverCallback) { constructorSpy(cb); }
+    }
+
+    vi.stubGlobal('IntersectionObserver', SpyIO);
+
+    try {
+      serverComponent.ngOnInit();
+      expect(constructorSpy).not.toHaveBeenCalled();
+    } finally {
+      vi.unstubAllGlobals();
+    }
+  });
+
+  it('ngOnDestroy should not throw when chapterObserver is null (SSR path)', () => {
+    expect(() => serverComponent.ngOnDestroy()).not.toThrow();
   });
 });
