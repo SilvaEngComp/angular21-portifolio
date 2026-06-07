@@ -5,6 +5,7 @@ import { Directive, ElementRef, Input, OnDestroy, OnInit, afterNextRender, injec
 })
 export class ScrollRevealDirective implements OnInit, OnDestroy {
   @Input() scrollRevealDelay = 0;
+  @Input() scrollRevealAnimation = 'fadeInUp';
 
   private readonly el = inject(ElementRef);
   private observer: IntersectionObserver | null = null;
@@ -28,20 +29,13 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    // Apply the hidden state via inline styles so it takes effect immediately,
-    // independent of whether the global stylesheet has been parsed yet.
-    // Angular's production build defers the global CSS asynchronously via
-    // Beasties (critical CSS inlining), meaning class-based styles may not be
-    // available when IntersectionObserver fires — causing all elements to appear
-    // "intersecting" and skip the animation. Inline styles bypass this race.
+    // Hide the element initially so it doesn't flash before the animation starts.
+    // Using inline opacity so it takes effect regardless of stylesheet load order.
     const native: HTMLElement = this.el.nativeElement;
-    native.classList.add('scroll-reveal');
     native.style.opacity = '0';
-    native.style.transform = 'translateY(32px)';
-    native.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
 
     if (this.scrollRevealDelay) {
-      native.style.transitionDelay = `${this.scrollRevealDelay}ms`;
+      native.style.animationDelay = `${this.scrollRevealDelay}ms`;
     }
   }
 
@@ -51,9 +45,9 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
     this.observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          native.classList.add('scroll-reveal--visible');
-          native.style.opacity = '1';
-          native.style.transform = 'translateY(0)';
+          // Remove inline opacity hide and trigger the animate.css entrance animation.
+          native.style.opacity = '';
+          native.classList.add('animate__animated', `animate__${this.scrollRevealAnimation}`);
           this.observer?.unobserve(native);
         }
       },
