@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { ScrollRevealDirective } from '../../directive/scroll-reveal.directive';
 
 export interface StackItem {
   name: string;
@@ -17,7 +18,7 @@ export interface StackCategory {
 
 @Component({
   selector: 'app-stacks',
-  imports: [MatIconModule],
+  imports: [MatIconModule, ScrollRevealDirective],
   templateUrl: './stacks.html',
   styleUrl: './stacks.scss',
 })

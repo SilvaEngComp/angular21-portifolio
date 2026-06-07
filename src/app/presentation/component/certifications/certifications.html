@@ -1,8 +1,8 @@
 <div class="cert-wrapper">
   <h2 class="chapter-heading">Certifications</h2>
 
-  @for (cert of certs; track cert.id; let last = $last) {
-    <div class="cert-node" [class.cert-node--last]="last">
+  @for (cert of certs; track cert.id; let last = $last; let i = $index) {
+    <div class="cert-node" [class.cert-node--last]="last" scrollReveal [scrollRevealDelay]="i * 100">
       <div class="node-track">
         <div class="node-badge {{ cert.inProgress ? 'node-badge--progress' : 'node-badge--earned' }}">
           <mat-icon>{{ cert.inProgress ? 'pending' : 'workspace_premium' }}</mat-icon>
@@ -22,11 +22,11 @@
     </div>
   }
 
-  <div class="languages-section">
+  <div class="languages-section" scrollReveal [scrollRevealDelay]="0">
     <h2 class="chapter-heading">Languages</h2>
     <div class="lang-pills">
-      @for (lang of languages; track lang.name) {
-        <div class="lang-pill">
+      @for (lang of languages; track lang.name; let i = $index) {
+        <div class="lang-pill" scrollReveal [scrollRevealDelay]="i * 100">
           <span class="lang-flag">{{ lang.flag }}</span>
           <span class="lang-name">{{ lang.name }}</span>
           <span class="lang-level">{{ lang.level }}</span>

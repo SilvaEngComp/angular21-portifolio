@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslatePipe } from '../../../i18n/translate.pipe';
+import { ScrollRevealDirective } from '../../directive/scroll-reveal.directive';
 
 export interface EducationEntry {
   id: string;
@@ -14,7 +15,7 @@ export interface EducationEntry {
 
 @Component({
   selector: 'app-degrees',
-  imports: [MatIconModule, TranslatePipe],
+  imports: [MatIconModule, TranslatePipe, ScrollRevealDirective],
   templateUrl: './degrees.html',
   styleUrl: './degrees.scss',
 })

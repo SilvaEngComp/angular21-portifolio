@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { ScrollRevealDirective } from '../../directive/scroll-reveal.directive';
 
 export interface CertEntry {
   id: string;
@@ -16,7 +17,7 @@ export interface LanguageEntry {
 
 @Component({
   selector: 'app-certifications',
-  imports: [MatIconModule],
+  imports: [MatIconModule, ScrollRevealDirective],
   templateUrl: './certifications.html',
   styleUrl: './certifications.scss',
 })

@@ -2,10 +2,11 @@ import { Component, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { TranslatePipe } from '../../../i18n/translate.pipe';
+import { ScrollRevealDirective } from '../../directive/scroll-reveal.directive';
 
 @Component({
   selector: 'app-experiences',
-  imports: [MatIconModule, MatButtonModule, TranslatePipe],
+  imports: [MatIconModule, MatButtonModule, TranslatePipe, ScrollRevealDirective],
   templateUrl: './experiences.html',
   styleUrl: './experiences.scss',
 })

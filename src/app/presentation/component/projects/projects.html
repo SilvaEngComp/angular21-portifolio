@@ -1,8 +1,8 @@
 <div class="proj-timeline">
   <h2 class="chapter-heading">{{'projects.title' | translate}}</h2>
 
-  @for (project of projects; track project.id; let last = $last) {
-    <div class="proj-node" [class.proj-node--last]="last">
+  @for (project of projects; track project.id; let last = $last; let i = $index) {
+    <div class="proj-node" [class.proj-node--last]="last" scrollReveal [scrollRevealDelay]="i * 100">
       <div class="node-track">
         <div class="node-badge {{project.iconClass}}">
           <mat-icon>{{ project.icon }}</mat-icon>

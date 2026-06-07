@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslatePipe } from '../../../i18n/translate.pipe';
+import { ScrollRevealDirective } from '../../directive/scroll-reveal.directive';
 
 export interface ProjectRepo {
   label: string;
@@ -19,7 +20,7 @@ export interface ProjectEntry {
 
 @Component({
   selector: 'app-projects',
-  imports: [MatIconModule, TranslatePipe],
+  imports: [MatIconModule, TranslatePipe, ScrollRevealDirective],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })

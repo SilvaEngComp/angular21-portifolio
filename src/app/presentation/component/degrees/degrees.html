@@ -1,8 +1,8 @@
 <div class="deg-timeline">
   <h2 class="chapter-heading">{{'education.title' | translate}}</h2>
 
-  @for (entry of entries; track entry.id; let last = $last) {
-    <div class="deg-node" [class.deg-node--last]="last">
+  @for (entry of entries; track entry.id; let last = $last; let i = $index) {
+    <div class="deg-node" [class.deg-node--last]="last" scrollReveal [scrollRevealDelay]="i * 150">
       <div class="node-track">
         <div class="node-badge">
           @if (entry.logo) {
