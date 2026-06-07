@@ -65,14 +65,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 96px 60px 72px;
+  padding: 96px 0 72px;
   position: relative;
+  overflow: hidden;
 }
 
 .hero-layout {
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
 .scroll-hint {
@@ -173,7 +172,7 @@
 // ─── Responsive: tablet ───────────────────────────────────────────────────────
 @media (max-width: 1079px) {
   .chapter--hero {
-    padding: 80px 32px 60px;
+    padding: 80px 0 60px;
   }
 
   .timeline-track {
@@ -195,7 +194,7 @@
   }
 
   .chapter--hero {
-    padding: 72px 16px 48px;
+    padding: 72px 0 48px;
   }
 
   .timeline-track {
