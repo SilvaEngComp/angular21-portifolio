@@ -1,54 +1,65 @@
 <div class="page-shell">
   <app-header></app-header>
 
-  <div id="section-home" class="bento-grid">
-    <mat-card scrollReveal id="section-about" class="grid-item about">
-      <mat-card-content>
+  <nav class="chapter-dots" aria-label="Page sections">
+    @for (chapter of chapters; track chapter.id) {
+      <button
+        class="chapter-dot"
+        [class.chapter-dot--active]="activeChapter() === chapter.id"
+        (click)="scrollToChapter(chapter.id)"
+        [title]="chapter.label | translate"
+        [attr.aria-label]="chapter.label | translate"
+      ></button>
+    }
+  </nav>
+
+  <div class="timeline-page">
+    <section class="chapter chapter--hero" id="chapter-hero">
+      <div class="hero-layout">
         <app-about></app-about>
-      </mat-card-content>
-    </mat-card>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">
+        <mat-icon>expand_more</mat-icon>
+      </div>
+    </section>
 
-    <mat-card scrollReveal class="grid-item image">
-      <mat-card-content>
-        <app-portrait></app-portrait>
-      </mat-card-content>
-    </mat-card>
+    <div class="timeline-track">
+      <section class="chapter chapter--standard" id="chapter-experiences">
+        <div class="chapter-inner" scrollReveal>
+          <app-experiences></app-experiences>
+        </div>
+      </section>
 
-    <mat-card scrollReveal class="grid-item stacks-card">
-      <mat-card-content>
-        <app-stacks></app-stacks>
-      </mat-card-content>
-    </mat-card>
+      <section class="chapter chapter--standard" id="chapter-projects">
+        <div class="chapter-inner" scrollReveal>
+          <app-projects></app-projects>
+        </div>
+      </section>
 
-    <mat-card scrollReveal id="section-contact" class="grid-item contact">
-      <mat-card-content>
+      <section class="chapter chapter--standard" id="chapter-skills">
+        <div class="chapter-inner" scrollReveal>
+          <app-stacks></app-stacks>
+        </div>
+      </section>
+
+      <section class="chapter chapter--standard" id="chapter-certifications">
+        <div class="chapter-inner" scrollReveal>
+          <app-certifications></app-certifications>
+        </div>
+      </section>
+
+      <section class="chapter chapter--standard" id="chapter-education">
+        <div class="chapter-inner" scrollReveal>
+          <app-degrees></app-degrees>
+        </div>
+      </section>
+    </div>
+
+    <section class="chapter chapter--cta" id="chapter-contact">
+      <div class="chapter-inner chapter-inner--cta" scrollReveal>
         <app-contact></app-contact>
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card scrollReveal id="section-projects" class="grid-item feature">
-      <mat-card-content>
-        <app-projects></app-projects>
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card scrollReveal id="section-experiences" class="grid-item narrative">
-      <mat-card-content>
-        <app-experiences></app-experiences>
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card scrollReveal class="grid-item degrees-card">
-      <mat-card-content>
-        <app-degrees></app-degrees>
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card scrollReveal class="grid-item list">
-      <mat-card-content>
-        <app-certifications></app-certifications>
-      </mat-card-content>
-    </mat-card>
+      </div>
+    </section>
   </div>
 
   @if (showScrollTop()) {

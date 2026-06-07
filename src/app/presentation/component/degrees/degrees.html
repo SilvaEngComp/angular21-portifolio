@@ -1,21 +1,30 @@
-<div class="degrees-container">
-  <h2 class="mat-headline-small">{{'education.title' | translate}}</h2>
-  <mat-list>
-    @for (entry of entries; track entry.titleKey; let last = $last) {
-      <mat-list-item lines="3">
-        <span matListItemIcon class="institution-icon">
+<div class="deg-timeline">
+  <h2 class="chapter-heading">{{'education.title' | translate}}</h2>
+
+  @for (entry of entries; track entry.id; let last = $last; let i = $index) {
+    <div class="deg-node" [class.deg-node--last]="last" scrollReveal [scrollRevealDelay]="i * 150">
+      <div class="node-track">
+        <div class="node-badge">
           @if (entry.logo) {
-            <img [src]="entry.logo" [alt]="entry.titleKey" class="institution-logo" />
+            <img [src]="entry.logo" [alt]="entry.institution" class="badge-logo" />
           } @else {
             <mat-icon>{{ entry.fallbackIcon }}</mat-icon>
           }
-        </span>
-        <span matListItemTitle>{{ entry.titleKey | translate }}</span>
-        <span matListItemLine>{{ entry.line }}</span>
-      </mat-list-item>
-      @if (!last) {
-        <mat-divider></mat-divider>
-      }
-    }
-  </mat-list>
+        </div>
+        @if (!last) {
+          <div class="node-line"></div>
+        }
+      </div>
+      <div class="deg-card">
+        <div class="deg-card-header">
+          <div class="deg-info">
+            <h3 class="deg-degree">{{ entry.degree }}</h3>
+            <p class="deg-institution">{{ entry.institution }}</p>
+          </div>
+          <span class="deg-date">{{ entry.date }}</span>
+        </div>
+        <p class="deg-summary">{{ entry.summary }}</p>
+      </div>
+    </div>
+  }
 </div>

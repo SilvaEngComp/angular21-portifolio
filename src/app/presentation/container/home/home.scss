@@ -1,9 +1,9 @@
 .page-shell {
   min-height: 100vh;
-  padding: 24px;
   position: relative;
 }
 
+// ─── Scroll-to-top FAB ────────────────────────────────────────────────────────
 .scroll-top-fab {
   position: fixed;
   bottom: 24px;
@@ -18,6 +18,206 @@
 @keyframes fab-in {
   from { opacity: 0; transform: scale(0.7); }
   to   { opacity: 1; transform: scale(1); }
+}
+
+// ─── Chapter dot navigation ───────────────────────────────────────────────────
+.chapter-dots {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chapter-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.55);
+    transform: scale(1.3);
+  }
+
+  &.chapter-dot--active {
+    background: linear-gradient(135deg, rgba(82, 34, 208, 1), rgba(255, 97, 150, 1));
+    transform: scale(1.25);
+  }
+}
+
+// ─── Timeline page container ──────────────────────────────────────────────────
+.timeline-page {
+  display: flex;
+  flex-direction: column;
+}
+
+// ─── Hero chapter ─────────────────────────────────────────────────────────────
+.chapter--hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 96px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-layout {
+  width: 100%;
+}
+
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.4;
+  animation: scroll-hint-pulse 2.2s ease-in-out infinite;
+
+  mat-icon {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@keyframes scroll-hint-pulse {
+  0%, 100% { opacity: 0.25; transform: translateX(-50%) translateY(0); }
+  50%       { opacity: 0.6;  transform: translateX(-50%) translateY(8px); }
+}
+
+// ─── Timeline track with spine ────────────────────────────────────────────────
+.timeline-track {
+  position: relative;
+  padding: 0 24px;
+  max-width: 980px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(82, 34, 208, 0.4) 8%,
+      rgba(255, 97, 150, 0.4) 92%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+}
+
+// ─── Standard chapter ─────────────────────────────────────────────────────────
+.chapter--standard {
+  padding: 64px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.chapter-inner {
+  width: 100%;
+  max-width: 860px;
+  background: rgba(255, 255, 255, 0.025);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+// ─── CTA contact chapter ──────────────────────────────────────────────────────
+.chapter--cta {
+  padding: 80px 24px;
+  display: flex;
+  justify-content: center;
+  background: rgba(82, 34, 208, 0.05);
+  border-top: 1px solid rgba(82, 34, 208, 0.12);
+}
+
+.chapter-inner--cta {
+  max-width: 600px;
+  text-align: center;
+}
+
+// ─── Section highlight animation ──────────────────────────────────────────────
+@keyframes section-highlight {
+  0%   { box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25); }
+  50%  { box-shadow: 0 0 0 4px rgba(82, 34, 208, 0.35); }
+  100% { box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25); }
+}
+
+.section-flash {
+  animation: section-highlight 2s ease-in-out;
+  border-radius: 20px;
+}
+
+// ─── Responsive: tablet ───────────────────────────────────────────────────────
+@media (max-width: 1079px) {
+  .chapter--hero {
+    padding: 80px 0 60px;
+  }
+
+  .timeline-track {
+    &::before {
+      left: 24px;
+      transform: none;
+    }
+  }
+
+  .chapter--cta {
+    padding: 60px 32px;
+  }
+}
+
+// ─── Responsive: mobile ───────────────────────────────────────────────────────
+@media (max-width: 499px) {
+  .chapter-dots {
+    display: none;
+  }
+
+  .chapter--hero {
+    padding: 72px 0 48px;
+  }
+
+  .timeline-track {
+    padding: 0 12px;
+    max-width: 100%;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .chapter--standard {
+    padding: 40px 0;
+  }
+
+  .chapter-inner {
+    padding: 24px 16px;
+    border-radius: 12px;
+  }
+
+  .chapter--cta {
+    padding: 48px 16px;
+  }
 }
 
 @keyframes section-highlight {

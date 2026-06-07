@@ -1,107 +1,47 @@
-<div class="projects-container">
-  <h2 class="mat-headline-small">{{'projects.title' | translate}}</h2>
-  <mat-accordion class="project-list">
+<div class="proj-timeline">
+  <h2 class="chapter-heading">{{'projects.title' | translate}}</h2>
 
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>{{'projects.li_1' | translate}}</mat-panel-title>
-      </mat-expansion-panel-header>
-      <p>{{'projects.li_1_desc' | translate}}</p>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>{{'projects.li_2' | translate}}</mat-panel-title>
-      </mat-expansion-panel-header>
-      <p>{{'projects.li_2_desc' | translate}}</p>
-      <mat-chip-set class="repo-chips">
-        <a mat-chip href="https://github.com/SilvaEngComp/commum_churche_app/tree/main" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
-          commum_churche_app
-        </a>
-      </mat-chip-set>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>{{'projects.li_3' | translate}}</mat-panel-title>
-      </mat-expansion-panel-header>
-      <p>{{'projects.li_3_desc' | translate}}</p>
-      <mat-chip-set class="repo-chips">
-        <a mat-chip href="https://github.com/SilvaEngComp/ecommerce-ms-clients" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
-          ms-clients
-        </a>
-        <a mat-chip href="https://github.com/SilvaEngComp/ecommerce-ms-products" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
-          ms-products
-        </a>
-        <a mat-chip href="https://github.com/SilvaEngComp/ecommerce-ms-orders" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
-          ms-orders
-        </a>
-      </mat-chip-set>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>{{'projects.li_4' | translate}}</mat-panel-title>
-      </mat-expansion-panel-header>
-      <p>{{'projects.li_4_desc' | translate}}</p>
-      <mat-chip-set class="repo-chips">
-        <a mat-chip href="https://github.com/SilvaEngComp/RFoT" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
-          RFoT
-        </a>
-      </mat-chip-set>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>{{'projects.li_5' | translate}}</mat-panel-title>
-      </mat-expansion-panel-header>
-      <p>{{'projects.li_5_desc' | translate}}</p>
-      <mat-chip-set class="repo-chips">
-        <a mat-chip href="https://github.com/SilvaEngComp/chatBot_app_ionic" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
-          chatBot_app_ionic
-        </a>
-        <a mat-chip href="https://github.com/SilvaEngComp/chatBot_api_laravel" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
-          chatBot_api_laravel
-        </a>
-      </mat-chip-set>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>{{'projects.li_6' | translate}}</mat-panel-title>
-      </mat-expansion-panel-header>
-      <p>{{'projects.li_6_desc' | translate}}</p>
-      <mat-chip-set class="repo-chips">
-        <a mat-chip href="https://github.com/SilvaEngComp/angular21-portifolio" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
-          angular21-portifolio
-        </a>
-      </mat-chip-set>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>{{'projects.li_7' | translate}}</mat-panel-title>
-      </mat-expansion-panel-header>
-      <p>{{'projects.li_6_desc' | translate}}</p>
-      <mat-chip-set class="repo-chips">
-        <a mat-chip href="https://github.com/SilvaEngComp/invest_api" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
-          invest_api
-        </a>
-        <a mat-chip href="https://github.com/SilvaEngComp/enginy_invest" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.simpleicons.org/github" alt="" class="chip-icon" />
-          enginy_invest
-        </a>
-      </mat-chip-set>
-    </mat-expansion-panel>
-
-  </mat-accordion>
+  @for (project of projects; track project.id; let last = $last; let i = $index) {
+    <div class="proj-node" [class.proj-node--last]="last" scrollReveal [scrollRevealDelay]="i * 100">
+      <div class="node-track">
+        <div class="node-badge {{project.iconClass}}">
+          <mat-icon>{{ project.icon }}</mat-icon>
+        </div>
+        @if (!last) {
+          <div class="node-line"></div>
+        }
+      </div>
+      <div class="proj-card">
+        <div class="proj-card-header">
+          <h3 class="proj-name">{{ project.name }}</h3>
+        </div>
+        <p class="proj-summary">{{ project.summary }}</p>
+        <div class="proj-stack">
+          @for (tag of project.stack; track tag) {
+            <span class="stack-tag">{{ tag }}</span>
+          }
+        </div>
+        @if (project.repos.length > 0) {
+          <div class="repos-footer">
+            <div class="repos-divider"></div>
+            <button class="repos-toggle" (click)="toggle(project.id)">
+              <span>Repositories</span>
+              <mat-icon>{{ isExpanded(project.id) ? 'expand_less' : 'expand_more' }}</mat-icon>
+            </button>
+            @if (isExpanded(project.id)) {
+              <div class="repo-chips">
+                @for (repo of project.repos; track repo.url) {
+                  <a class="repo-chip" [href]="repo.url" target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.simpleicons.org/github/ffffff" alt="" class="chip-icon" />
+                    {{ repo.label }}
+                  </a>
+                }
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  }
 </div>
+

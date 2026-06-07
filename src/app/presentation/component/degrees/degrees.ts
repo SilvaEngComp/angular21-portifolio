@@ -1,46 +1,59 @@
 import { Component } from '@angular/core';
-import { NgIf } from '@angular/common';
-import { MatListModule } from '@angular/material/list';
-import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslatePipe } from '../../../i18n/translate.pipe';
+import { ScrollRevealDirective } from '../../directive/scroll-reveal.directive';
 
 export interface EducationEntry {
-  titleKey: string;
-  line: string;
+  id: string;
+  institution: string;
+  degree: string;
+  date: string;
+  summary: string;
   logo?: string;
   fallbackIcon: string;
 }
 
 @Component({
   selector: 'app-degrees',
-  imports: [NgIf, MatListModule, MatDividerModule, MatIconModule, TranslatePipe],
+  imports: [MatIconModule, TranslatePipe, ScrollRevealDirective],
   templateUrl: './degrees.html',
   styleUrl: './degrees.scss',
 })
 export class DegreesComponent {
   entries: EducationEntry[] = [
     {
-      titleKey: 'education.li_1',
-      line: 'Advanced modern Java development and architecture (Spring Boot, Quarkus, Kafka, AWS, DevOps).',
+      id: 'unipds',
+      institution: 'UNIPDS Educação',
+      degree: 'Postgraduate · Java Elite',
+      date: 'Nov 2025',
+      summary: 'Advanced modern Java development and architecture — Spring Boot, Quarkus, Kafka, AWS, and DevOps practices.',
       logo: 'assets/icons/education/unipds.png',
       fallbackIcon: 'school',
     },
     {
-      titleKey: 'education.li_2',
-      line: 'Framework integrating IoT devices, blockchain, smart contracts, and ML for data validation.',
+      id: 'ufba',
+      institution: 'Federal University of Bahia',
+      degree: "Master's · Computer Science",
+      date: 'Jul 2021 — Nov 2024',
+      summary: 'Research on a framework integrating IoT devices, blockchain, smart contracts, and ML for reliable data validation.',
       logo: 'assets/icons/education/ufba.png',
       fallbackIcon: 'school',
     },
     {
-      titleKey: 'education.li_3',
-      line: 'Advanced security strategies to enhance web application resilience.',
+      id: 'igti',
+      institution: 'IGTI — Information & Management Technology Institute',
+      degree: 'MBA · Cyber Security',
+      date: 'Mar 2018 — Feb 2019',
+      summary: 'Advanced security strategies to enhance web application resilience against modern threats.',
       logo: 'assets/icons/education/igti.png',
       fallbackIcon: 'security',
     },
     {
-      titleKey: 'education.li_4',
-      line: 'Stress level identification using ECG, signal processing, and ML.',
+      id: 'ufrb',
+      institution: 'Federal University of Recôncavo da Bahia',
+      degree: 'Bachelor · Computer Engineering',
+      date: 'Feb 2013 — Aug 2018',
+      summary: 'Thesis: stress level identification using ECG signal processing and machine learning algorithms.',
       logo: 'assets/icons/education/ufrb.png',
       fallbackIcon: 'school',
     },

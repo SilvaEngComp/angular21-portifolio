@@ -1,74 +1,191 @@
-.degrees-container {
-  height: 100%;
+.deg-timeline {
+  position: relative;
+}
 
-  h2 {
-    margin: 0 0 8px 0;
-  }
+.chapter-heading {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin: 0 0 28px 0;
+}
 
-  mat-list {
-    padding: 0;
-  }
+// ─── Node row ─────────────────────────────────────────────────────────────────
+.deg-node {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
 
-  span[matListItemTitle],
-  span[matListItemLine] {
-    white-space: normal;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.4;
-  }
-
-  mat-list-item {
-    height: auto !important;
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-
-  .institution-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-  }
-
-  .institution-logo {
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
-    border-radius: 6px;
+  &--last {
+    margin-bottom: 0;
   }
 }
 
+// ─── Left track: badge + vertical line ────────────────────────────────────────
+.node-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.node-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  mat-icon {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+    opacity: 0.7;
+  }
+}
+
+.badge-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.node-line {
+  flex: 1;
+  width: 1px;
+  margin-top: 8px;
+  background: linear-gradient(
+    to bottom,
+    rgba(82, 34, 208, 0.4) 0%,
+    rgba(255, 97, 150, 0.3) 100%
+  );
+}
+
+// ─── Card ─────────────────────────────────────────────────────────────────────
+.deg-card {
+  flex: 1;
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 4px;
+}
+
+.deg-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.deg-info {
+  min-width: 0;
+}
+
+.deg-degree {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.deg-institution {
+  font-size: 0.85rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.deg-date {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.deg-summary {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+// ─── Responsive: mobile ───────────────────────────────────────────────────────
 @media (max-width: 499px) {
-  .degrees-container {
-    h2 {
-      font-size: 1rem;
-      margin: 0 0 4px 0;
-    }
+  .deg-node {
+    gap: 14px;
+  }
 
-    span[matListItemTitle] {
-      font-size: 13px;
-    }
+  .node-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+  }
 
-    span[matListItemLine] {
-      font-size: 12px;
-    }
+  .badge-logo {
+    width: 26px;
+    height: 26px;
+  }
 
-    mat-list-item {
-      padding-top: 4px;
-      padding-bottom: 4px;
-    }
+  .deg-card {
+    padding: 16px;
+  }
 
-    .institution-icon {
-      width: 32px;
-      height: 32px;
-    }
+  .deg-card-header {
+    flex-direction: column;
+    gap: 4px;
+  }
 
-    .institution-logo {
-      width: 28px;
-      height: 28px;
-    }
+  .deg-degree {
+    font-size: 0.9rem;
+  }
+
+  .deg-date {
+    font-size: 0.75rem;
+  }
+}
+
+.node-desc {
+  font-size: 12px;
+  opacity: 0.55;
+  line-height: 1.5;
+}
+
+@media (max-width: 499px) {
+  .chapter-heading {
+    font-size: 0.65rem;
+    margin-left: 44px;
+  }
+
+  .education-timeline::before {
+    left: 15px;
+    top: 38px;
+  }
+
+  .node-dot {
+    width: 32px;
+    height: 32px;
+  }
+
+  .degree-logo {
+    width: 22px;
+    height: 22px;
+  }
+
+  .node-title {
+    font-size: 13px;
+  }
+
+  .node-desc {
+    font-size: 11px;
   }
 }
 

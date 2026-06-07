@@ -1,5 +1,47 @@
 <section class="hero-card" id="about">
-  <div class="mat-overline eyebrow">{{'about.eyebrow' | translate}}</div>
-  <h1 class="mat-headline-large">{{'about.title' | translate}}</h1>
-  <p class="mat-body-large">{{'about.description' | translate}}</p>
+  <div class="about-intro" scrollReveal [scrollRevealDelay]="0">
+    <div class="about-headline">
+      <div class="mat-overline eyebrow">{{'about.eyebrow' | translate}}</div>
+      <h1 class="mat-headline-large">{{'about.title' | translate}}</h1>
+    </div>
+  </div>
+
+  <div class="story-sections">
+    <div class="story-section" scrollReveal [scrollRevealDelay]="100">
+      <div class="story-content">
+        <h3 class="story-heading">{{'about.beginning.title' | translate}}</h3>
+        <p class="story-text">{{'about.beginning.text' | translate}}</p>
+      </div>
+      <div class="story-visual">
+        <img src="/assets/images/portrait.jpg" alt="Early career as a professor" />
+      </div>
+    </div>
+
+    <div class="story-section" scrollReveal [scrollRevealDelay]="100">
+      <div class="story-content">
+        <h3 class="story-heading">{{'about.career.title' | translate}}</h3>
+        <p class="story-text">{{'about.career.text' | translate}}</p>
+      </div>
+      <div class="story-visual">
+        <img src="/assets/images/portrait2.jpg" alt="Software engineering career" />
+      </div>
+    </div>
+
+    <div class="story-section" scrollReveal [scrollRevealDelay]="100">
+      <div class="story-content">
+        <h3 class="story-heading">{{'about.background.title' | translate}}</h3>
+        <p class="story-text">{{'about.background.text' | translate}}</p>
+      </div>
+      <div class="story-visual">
+        <img src="/assets/images/portrait3.jpg" alt="Technical background and expertise" />
+      </div>
+    </div>
+
+    <div class="story-section story-section--full" scrollReveal [scrollRevealDelay]="100">
+      <div class="story-content">
+        <h3 class="story-heading">{{'about.future.title' | translate}}</h3>
+        <p class="story-text">{{'about.future.text' | translate}}</p>
+      </div>
+    </div>
+  </div>
 </section>

@@ -1,50 +1,38 @@
-<div class="certifications-container">
-  <h2 class="mat-headline-small">Certifications</h2>
-  <mat-list>
-    <mat-list-item>
-      <mat-icon matListItemIcon>workspace_premium</mat-icon>
-      <span matListItemTitle>Github GH-300  <span class="in-progress">(in progress)</span></span>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-icon matListItemIcon>workspace_premium</mat-icon>
-      <span matListItemTitle>Spring Certified Professional 2024 (2V0-72.22)  <span class="in-progress">(In progress)</span></span>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-icon matListItemIcon>workspace_premium</mat-icon>
-      <span matListItemTitle>Oracle Certified Associate, Java SE 8 Programmer - 1Z0-808  (2026)</span>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-icon matListItemIcon>workspace_premium</mat-icon>
-      <span matListItemTitle>Oracle Java Certified Foundations Associate - 1Z0-811 (2026)</span>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-       <mat-list-item>
-      <mat-icon matListItemIcon>workspace_premium</mat-icon>
-      <span matListItemTitle>Aspiring Architecture — L0 (2025)</span>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-icon matListItemIcon>workspace_premium</mat-icon>
-      <span matListItemTitle>Microsoft Azure Fundamentals — AZ&#8209;900 (2023)</span>
-    </mat-list-item>
-    <mat-divider></mat-divider>
- 
-  </mat-list>
-  <mat-divider></mat-divider>
-  <h2 class="mat-headline-small section-title">Languages</h2>
-  <mat-list>
-    <mat-list-item>
-      <mat-icon matListItemIcon>language</mat-icon>
-      <span matListItemTitle>Portuguese: Native</span>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <mat-icon matListItemIcon>language</mat-icon>
-      <span matListItemTitle>English: B2</span>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <mat-icon matListItemIcon>language</mat-icon>
-      <span matListItemTitle>Spanish: A1</span>
-    </mat-list-item>
-  </mat-list>
+<div class="cert-wrapper">
+  <h2 class="chapter-heading">Certifications</h2>
+
+  @for (cert of certs; track cert.id; let last = $last; let i = $index) {
+    <div class="cert-node" [class.cert-node--last]="last" scrollReveal [scrollRevealDelay]="i * 100">
+      <div class="node-track">
+        <div class="node-badge {{ cert.inProgress ? 'node-badge--progress' : 'node-badge--earned' }}">
+          <mat-icon>{{ cert.inProgress ? 'pending' : 'workspace_premium' }}</mat-icon>
+        </div>
+        @if (!last) {
+          <div class="node-line"></div>
+        }
+      </div>
+      <div class="cert-card">
+        <span class="cert-name">{{ cert.name }}</span>
+        @if (cert.inProgress) {
+          <span class="cert-badge cert-badge--progress">In progress</span>
+        } @else if (cert.year) {
+          <span class="cert-badge cert-badge--year">{{ cert.year }}</span>
+        }
+      </div>
+    </div>
+  }
+
+  <div class="languages-section" scrollReveal [scrollRevealDelay]="0">
+    <h2 class="chapter-heading">Languages</h2>
+    <div class="lang-pills">
+      @for (lang of languages; track lang.name; let i = $index) {
+        <div class="lang-pill" scrollReveal [scrollRevealDelay]="i * 100">
+          <span class="lang-flag">{{ lang.flag }}</span>
+          <span class="lang-name">{{ lang.name }}</span>
+          <span class="lang-level">{{ lang.level }}</span>
+        </div>
+      }
+    </div>
+  </div>
 </div>
+
