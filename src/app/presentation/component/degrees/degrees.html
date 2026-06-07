@@ -1,21 +1,19 @@
-<div class="degrees-container">
-  <h2 class="mat-headline-small">{{'education.title' | translate}}</h2>
-  <mat-list>
-    @for (entry of entries; track entry.titleKey; let last = $last) {
-      <mat-list-item lines="3">
-        <span matListItemIcon class="institution-icon">
-          @if (entry.logo) {
-            <img [src]="entry.logo" [alt]="entry.titleKey" class="institution-logo" />
-          } @else {
-            <mat-icon>{{ entry.fallbackIcon }}</mat-icon>
-          }
-        </span>
-        <span matListItemTitle>{{ entry.titleKey | translate }}</span>
-        <span matListItemLine>{{ entry.line }}</span>
-      </mat-list-item>
-      @if (!last) {
-        <mat-divider></mat-divider>
-      }
-    }
-  </mat-list>
+<div class="education-timeline">
+  <h2 class="chapter-heading">{{'education.title' | translate}}</h2>
+
+  @for (entry of entries; track entry.titleKey) {
+    <div class="timeline-node">
+      <div class="node-dot">
+        @if (entry.logo) {
+          <img [src]="entry.logo" [alt]="entry.titleKey" class="degree-logo" />
+        } @else {
+          <mat-icon>{{ entry.fallbackIcon }}</mat-icon>
+        }
+      </div>
+      <div class="node-body">
+        <div class="node-title">{{ entry.titleKey | translate }}</div>
+        <div class="node-desc">{{ entry.line }}</div>
+      </div>
+    </div>
+  }
 </div>

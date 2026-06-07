@@ -1,46 +1,99 @@
-.experiences-container {
-  h2 {
-    margin: 0 0 16px 0;
+.experiences-timeline {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 44px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      rgba(82, 34, 208, 0.5) 0%,
+      rgba(255, 97, 150, 0.5) 100%
+    );
+    border-radius: 2px;
+  }
+}
+
+.chapter-heading {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin: 0 0 28px 28px;
+}
+
+.timeline-node {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.node-dot {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(82, 34, 208, 1), rgba(255, 97, 150, 1));
+  box-shadow: 0 0 0 3px rgba(82, 34, 208, 0.18), 0 0 0 6px rgba(82, 34, 208, 0.06);
+  z-index: 1;
+}
+
+.node-body {
+  mat-expansion-panel {
+    border-radius: 12px !important;
   }
 
   mat-expansion-panel-header {
-    height: 80px !important;
+    height: auto !important;
+    min-height: 56px;
+    padding: 14px 20px !important;
   }
+}
 
-  ul {
-    padding-left: 20px;
-    margin: 8px 0;
+ul {
+  padding-left: 20px;
+  margin: 4px 0 8px;
 
-    li {
-      line-height: 1.8;
-      margin-bottom: 6px;
-    }
+  li {
+    line-height: 1.8;
+    margin-bottom: 6px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 499px) {
-  .experiences-container {
-    mat-expansion-panel-header {
-      height: auto !important;
-      padding: 10px 16px;
-    }
+  .chapter-heading {
+    font-size: 0.65rem;
+    margin-left: 22px;
+  }
 
-    mat-panel-description {
-      font-size: 9pt;
-    }
+  .timeline-node {
+    padding-left: 22px;
+  }
 
-    h2 {
-      font-size: 1rem;
-      margin: 0 0 10px 0;
-    }
+  .node-dot {
+    width: 12px;
+    height: 12px;
+    top: 22px;
+  }
 
-    ul {
-      padding-left: 14px;
+  .experiences-timeline::before {
+    left: 5px;
+    top: 38px;
+  }
 
-      li {
-        font-size: 13px;
-      }
-    }
+  ul li {
+    font-size: 13px;
   }
 }
 

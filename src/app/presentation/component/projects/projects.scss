@@ -1,18 +1,32 @@
 .projects-container {
-  height: 100%;
-
-  h2 {
-    margin: 0 0 16px 0;
+  .chapter-heading {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.45;
+    margin: 0 0 20px 0;
   }
 
   .project-list {
     display: block;
   }
 
+  mat-expansion-panel {
+    margin-bottom: 8px;
+    border-left: 3px solid rgba(82, 34, 208, 0.45) !important;
+    border-radius: 0 12px 12px 0 !important;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   p {
     font-size: 14px;
     line-height: 1.6;
     margin: 0 0 12px;
+    opacity: 0.85;
   }
 
   .repo-chips {
@@ -33,11 +47,6 @@
 
 @media (max-width: 499px) {
   .projects-container {
-    h2 {
-      font-size: 1rem;
-      margin: 0 0 10px 0;
-    }
-
     p {
       font-size: 13px;
     }

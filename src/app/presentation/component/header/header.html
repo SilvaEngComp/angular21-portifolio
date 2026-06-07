@@ -13,11 +13,11 @@
 
   @if (!isMobile()) {
     <nav class="nav-links">
-      <button mat-button (click)="scrollTo('section-home')">{{'nav.home' | translate}}</button>
-      <button mat-button (click)="scrollTo('section-about')">{{'nav.about' | translate}}</button>
-      <button mat-button (click)="scrollTo('section-projects')">{{'nav.projects' | translate}}</button>
-      <button mat-button (click)="scrollTo('section-experiences')">{{'nav.experiences' | translate}}</button>
-      <button mat-button (click)="scrollTo('section-contact')">{{'nav.contact' | translate}}</button>
+      <button mat-button (click)="scrollTo('chapter-hero')">{{'nav.home' | translate}}</button>
+      <button mat-button (click)="scrollTo('chapter-hero')">{{'nav.about' | translate}}</button>
+      <button mat-button (click)="scrollTo('chapter-projects')">{{'nav.projects' | translate}}</button>
+      <button mat-button (click)="scrollTo('chapter-experiences')">{{'nav.experiences' | translate}}</button>
+      <button mat-button (click)="scrollTo('chapter-contact')">{{'nav.contact' | translate}}</button>
       <a mat-raised-button color="accent"
          [href]="cvUrl()"
          download>
@@ -47,23 +47,23 @@
     </button>
 
     <mat-menu #mobileMenu="matMenu">
-      <button mat-menu-item (click)="scrollTo('section-home')">
+      <button mat-menu-item (click)="scrollTo('chapter-hero')">
         <mat-icon>home</mat-icon>
         <span>{{'nav.home' | translate}}</span>
       </button>
-      <button mat-menu-item (click)="scrollTo('section-about')">
+      <button mat-menu-item (click)="scrollTo('chapter-hero')">
         <mat-icon>person</mat-icon>
         <span>{{'nav.about' | translate}}</span>
       </button>
-      <button mat-menu-item (click)="scrollTo('section-projects')">
+      <button mat-menu-item (click)="scrollTo('chapter-projects')">
         <mat-icon>work</mat-icon>
         <span>{{'nav.projects' | translate}}</span>
       </button>
-      <button mat-menu-item (click)="scrollTo('section-experiences')">
+      <button mat-menu-item (click)="scrollTo('chapter-experiences')">
         <mat-icon>history_edu</mat-icon>
         <span>{{'nav.experiences' | translate}}</span>
       </button>
-      <button mat-menu-item (click)="scrollTo('section-contact')">
+      <button mat-menu-item (click)="scrollTo('chapter-contact')">
         <mat-icon>contact_mail</mat-icon>
         <span>{{'nav.contact' | translate}}</span>
       </button>

@@ -1,74 +1,116 @@
-.degrees-container {
-  height: 100%;
+.education-timeline {
+  position: relative;
 
-  h2 {
-    margin: 0 0 8px 0;
-  }
-
-  mat-list {
-    padding: 0;
-  }
-
-  span[matListItemTitle],
-  span[matListItemLine] {
-    white-space: normal;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.4;
-  }
-
-  mat-list-item {
-    height: auto !important;
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-
-  .institution-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-  }
-
-  .institution-logo {
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
-    border-radius: 6px;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 44px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      rgba(82, 34, 208, 0.5) 0%,
+      rgba(255, 97, 150, 0.5) 100%
+    );
+    border-radius: 2px;
   }
 }
 
+.chapter-heading {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin: 0 0 28px 52px;
+}
+
+.timeline-node {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 14px 0;
+  position: relative;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+.node-dot {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+
+  mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+  }
+}
+
+.degree-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.node-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.node-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.node-desc {
+  font-size: 12px;
+  opacity: 0.55;
+  line-height: 1.5;
+}
+
 @media (max-width: 499px) {
-  .degrees-container {
-    h2 {
-      font-size: 1rem;
-      margin: 0 0 4px 0;
-    }
+  .chapter-heading {
+    font-size: 0.65rem;
+    margin-left: 44px;
+  }
 
-    span[matListItemTitle] {
-      font-size: 13px;
-    }
+  .education-timeline::before {
+    left: 15px;
+    top: 38px;
+  }
 
-    span[matListItemLine] {
-      font-size: 12px;
-    }
+  .node-dot {
+    width: 32px;
+    height: 32px;
+  }
 
-    mat-list-item {
-      padding-top: 4px;
-      padding-bottom: 4px;
-    }
+  .degree-logo {
+    width: 22px;
+    height: 22px;
+  }
 
-    .institution-icon {
-      width: 32px;
-      height: 32px;
-    }
+  .node-title {
+    font-size: 13px;
+  }
 
-    .institution-logo {
-      width: 28px;
-      height: 28px;
-    }
+  .node-desc {
+    font-size: 11px;
   }
 }
 

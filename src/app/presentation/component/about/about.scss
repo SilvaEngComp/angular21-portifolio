@@ -1,47 +1,48 @@
 .hero-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  gap: 20px;
 }
 
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  margin-bottom: 18px;
+  color: rgba(255, 97, 150, 0.9);
+  margin: 0;
 }
 
 h1 {
-  font-size: clamp(1.6rem, 2.6vw, 3.4rem);
-  line-height: 1.02;
+  font-size: clamp(1.8rem, 3vw, 3.2rem);
+  line-height: 1.08;
   margin: 0;
 }
 
 p {
-  margin-top: 24px;
-  width: 100%;
-  max-width: unset;
-  padding: 0 20px;
+  margin: 0;
+  max-width: 620px;
   line-height: 1.8;
-  text-align: justify;
-  box-sizing: border-box;
+  opacity: 0.82;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1079px) {
+  p {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 499px) {
   .eyebrow {
     font-size: 10px;
-    margin-bottom: 10px;
   }
 
   h1 {
-    font-size: clamp(1.4rem, 7vw, 2rem);
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
   }
 
   p {
-    padding: 0 4px;
-    margin-top: 14px;
     font-size: 14px;
   }
 }

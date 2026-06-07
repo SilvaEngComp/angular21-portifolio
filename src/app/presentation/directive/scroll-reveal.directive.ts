@@ -1,15 +1,21 @@
-import { Directive, ElementRef, OnDestroy, OnInit, inject } from '@angular/core';
+import { Directive, ElementRef, Input, OnDestroy, OnInit, inject } from '@angular/core';
 
 @Directive({
   selector: '[scrollReveal]',
 })
 export class ScrollRevealDirective implements OnInit, OnDestroy {
+  @Input() scrollRevealDelay = 0;
+
   private readonly el = inject(ElementRef);
   private observer: IntersectionObserver | null = null;
 
   ngOnInit(): void {
     const native: HTMLElement = this.el.nativeElement;
     native.classList.add('scroll-reveal');
+
+    if (this.scrollRevealDelay) {
+      native.style.transitionDelay = `${this.scrollRevealDelay}ms`;
+    }
 
     this.observer = new IntersectionObserver(
       ([entry]) => {
