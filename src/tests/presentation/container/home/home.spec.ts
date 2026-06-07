@@ -68,4 +68,111 @@ describe('Home', () => {
     window.dispatchEvent(new Event('scroll'));
     expect(component.showScrollTop()).toBe(true);
   });
+
+  it('scrollToChapter should call scrollIntoView when element exists', () => {
+    const scrollIntoViewMock = vi.fn();
+    window.HTMLElement.prototype.scrollIntoView = scrollIntoViewMock;
+
+    const el = document.createElement('div');
+    el.id = 'chapter-hero';
+    document.body.appendChild(el);
+
+    component.scrollToChapter('chapter-hero');
+
+    expect(scrollIntoViewMock).toHaveBeenCalledWith({ behavior: 'smooth', block: 'start' });
+    document.body.removeChild(el);
+  });
+
+  it('scrollToChapter should not throw when element does not exist', () => {
+    expect(() => component.scrollToChapter('does-not-exist')).not.toThrow();
+  });
+
+  it('ngOnInit should call observe for each chapter element found in DOM', () => {
+    const observeSpy = vi.fn();
+
+    class LocalMockIO {
+      observe = observeSpy;
+      unobserve = vi.fn();
+      disconnect = vi.fn();
+      constructor(_cb: IntersectionObserverCallback) {}
+    }
+
+    vi.useFakeTimers();
+    vi.stubGlobal('IntersectionObserver', LocalMockIO);
+
+    const elements = component.chapters.map(({ id }) => {
+      const el = document.createElement('section');
+      el.id = id;
+      document.body.appendChild(el);
+      return el;
+    });
+
+    try {
+      component.ngOnInit();
+      vi.advanceTimersByTime(200);
+      expect(observeSpy).toHaveBeenCalledTimes(component.chapters.length);
+    } finally {
+      elements.forEach(el => document.body.removeChild(el));
+      vi.useRealTimers();
+    }
+  });
+
+  it('ngOnInit should not call observe when chapter elements are absent from DOM', () => {
+    const observeSpy = vi.fn();
+
+    class LocalMockIO {
+      observe = observeSpy;
+      unobserve = vi.fn();
+      disconnect = vi.fn();
+      constructor(_cb: IntersectionObserverCallback) {}
+    }
+
+    vi.useFakeTimers();
+    vi.stubGlobal('IntersectionObserver', LocalMockIO);
+    const getElSpy = vi.spyOn(document, 'getElementById').mockReturnValue(null);
+
+    try {
+      component.ngOnInit();
+      vi.advanceTimersByTime(200);
+      expect(observeSpy).not.toHaveBeenCalled();
+    } finally {
+      getElSpy.mockRestore();
+      vi.useRealTimers();
+    }
+  });
+
+  it('ngOnInit IntersectionObserver callback sets activeChapter when intersecting', () => {
+    let capturedCallback: IntersectionObserverCallback | undefined;
+
+    class CapturingMockIO {
+      observe = vi.fn();
+      unobserve = vi.fn();
+      disconnect = vi.fn();
+      constructor(cb: IntersectionObserverCallback) { capturedCallback = cb; }
+    }
+
+    vi.stubGlobal('IntersectionObserver', CapturingMockIO);
+    component.ngOnInit();
+    const fakeEntry = { isIntersecting: true, target: { id: 'chapter-experiences' } } as unknown as IntersectionObserverEntry;
+    capturedCallback!([fakeEntry], null as unknown as IntersectionObserver);
+    expect(component.activeChapter()).toBe('chapter-experiences');
+  });
+
+  it('ngOnInit IntersectionObserver callback ignores non-intersecting entries', () => {
+    let capturedCallback: IntersectionObserverCallback | undefined;
+
+    class CapturingMockIO {
+      observe = vi.fn();
+      unobserve = vi.fn();
+      disconnect = vi.fn();
+      constructor(cb: IntersectionObserverCallback) { capturedCallback = cb; }
+    }
+
+    vi.stubGlobal('IntersectionObserver', CapturingMockIO);
+    component.ngOnInit();
+    const initial = component.activeChapter();
+    const fakeEntry = { isIntersecting: false, target: { id: 'chapter-experiences' } } as unknown as IntersectionObserverEntry;
+    capturedCallback!([fakeEntry], null as unknown as IntersectionObserver);
+    expect(component.activeChapter()).toBe(initial);
+  });
 });
