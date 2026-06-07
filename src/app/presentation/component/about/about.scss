@@ -4,6 +4,24 @@
   gap: 20px;
 }
 
+// ─── Intro: headline + portrait side by side ──────────────────────────────────
+.about-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.about-headline {
+  flex: 1;
+  min-width: 0;
+}
+
+.about-portrait {
+  flex-shrink: 0;
+  width: 260px;
+  height: 340px;
+}
+
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.22em;
@@ -65,6 +83,18 @@ p {
   p, .story-text, .story-sections {
     max-width: 100%;
   }
+
+  .about-intro {
+    flex-direction: column-reverse;
+    gap: 24px;
+  }
+
+  .about-portrait {
+    width: 100%;
+    max-width: 260px;
+    height: 300px;
+    align-self: center;
+  }
 }
 
 @media (max-width: 499px) {
@@ -88,6 +118,10 @@ p {
 
   .story-heading {
     font-size: 0.68rem;
+  }
+
+  .about-portrait {
+    height: 260px;
   }
 }
 

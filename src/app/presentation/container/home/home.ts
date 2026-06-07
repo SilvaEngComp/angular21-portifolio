@@ -5,7 +5,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Header } from '../../component/header/header';
 import { AboutComponent } from '../../component/about/about';
-import { PortraitComponent } from '../../component/portrait/portrait';
 import { StacksComponent } from '../../component/stacks/stacks';
 import { ExperiencesComponent } from '../../component/experiences/experiences';
 import { DegreesComponent } from '../../component/degrees/degrees';
@@ -17,7 +16,7 @@ import { TranslatePipe } from '../../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-home',
-  imports: [MatButtonModule, MatIconModule, Header, AboutComponent, PortraitComponent, StacksComponent, ExperiencesComponent, DegreesComponent, ProjectsComponent, CertificationsComponent, ContactComponent, ScrollRevealDirective, TranslatePipe],
+  imports: [MatButtonModule, MatIconModule, Header, AboutComponent, StacksComponent, ExperiencesComponent, DegreesComponent, ProjectsComponent, CertificationsComponent, ContactComponent, ScrollRevealDirective, TranslatePipe],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
