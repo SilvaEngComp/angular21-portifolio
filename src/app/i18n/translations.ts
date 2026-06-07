@@ -62,6 +62,8 @@ export const TRANSLATIONS: Record<string, Record<Locale, string>> = {
   'projects.li_5_desc': { en: 'Developed chatBot applications using Ionic and Laravel, integrating with various APIs and services.', pt: 'Desenvolvi aplicações ChatBot usando Ionic e Laravel, integrando com várias APIs e serviços.' },
   'projects.li_6': { en: 'Personal Portfolio', pt: 'Portfólio Pessoal' },
   'projects.li_6_desc': { en: 'This portfolio — built with Angular 21, Angular Material, SCSS, and i18n support. Features a responsive bento-grid layout, scroll-reveal animations, and a mobile-first design.', pt: 'Este portfólio — desenvolvido com Angular 21, Angular Material, SCSS e suporte a i18n. Inclui layout bento-grid responsivo, animações de scroll-reveal e design mobile-first.' },
+  'projects.li_7': { en: 'Invest API', pt: 'API de Investimentos' },
+  'projects.li_7_desc': { en: 'Developed an investment API using modern backend technologies, ensuring secure and efficient data handling.', pt: 'Desenvolvi uma API de investimentos usando tecnologias backend modernas, garantindo manipulação de dados segura e eficiente.' },
   'education.title': { en: 'Education', pt: 'Educação' },
   'education.li_1': { en: 'UNIPDS Educação — Postgraduate — Java Elite (Nov 2025) | Advanced modern Java development and architecture.', pt: 'UNIPDS Educação — Pós-graduação — Java Elite (Nov 2025) | Desenvolvimento moderno de Java e arquitetura avançada.' },
   'education.li_2': { en: 'Federal University of Bahia — Master in Computer Science (Jul 2021 – Nov 2024) | IoT, blockchain, smart contracts, and ML for data validation.', pt: 'Universidade Federal da Bahia — Mestrado em Ciência da Computação (Jul 2021 – Nov 2024) | IoT, blockchain, smart contracts e ML para validação de dados.' },

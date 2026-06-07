@@ -1,9 +1,7 @@
 import { Component, OnDestroy, OnInit, signal, computed } from '@angular/core';
-import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-portrait',
-  imports: [NgClass],
   templateUrl: './portrait.html',
   styleUrl: './portrait.scss',
 })
