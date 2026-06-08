@@ -31,13 +31,10 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
       native.style.animationDelay = `${this.scrollRevealDelay}ms`;
     }
 
-    console.log(`[ScrollReveal] registered — animation: animate__${this.scrollRevealAnimation}, delay: ${this.scrollRevealDelay}ms`, native);
   }
 
   private setupObserver(): void {
     const native: HTMLElement = this.el.nativeElement;
-
-    console.log(`[ScrollReveal] observing`, native);
 
     this.observer = new IntersectionObserver(
       ([entry]) => {
@@ -45,7 +42,6 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
           // Remove inline opacity hide and trigger the animate.css entrance animation.
           native.style.opacity = '';
           native.classList.add('animate__animated', `animate__${this.scrollRevealAnimation}`);
-          console.log(`[ScrollReveal] triggered — animate__${this.scrollRevealAnimation}`, native);
           this.observer?.unobserve(native);
         }
       },
