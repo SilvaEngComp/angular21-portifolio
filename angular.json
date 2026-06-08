@@ -22,11 +22,10 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
+            "index": "src/index.html",
             "tsConfig": "tsconfig.app.json",
             "outputPath": "dist/portifolio",
             "inlineStyleLanguage": "scss",
-            "optimization": true,
-
             "assets": [
               {
                 "glob": "**/*",
@@ -45,6 +44,9 @@
           },
           "configurations": {
             "production": {
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true,
               "budgets": [
                 {
                   "type": "initial",
