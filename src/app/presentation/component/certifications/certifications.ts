@@ -23,9 +23,9 @@ export interface LanguageEntry {
 })
 export class CertificationsComponent {
   certs: CertEntry[] = [
-    { id: 'spring',      name: 'Spring Certified Professional 2024 — 2V0-72.22',                     inProgress: true  },
     { id: 'gh300',       name: 'GitHub GH-300',                                                      inProgress: true  },
     { id: 'angularL2CD',   name: 'Mid-Level Angular Developer - Certificates.dev', year: '2026', inProgress: true },
+{ id: 'spring',      name: 'Spring Certified Professional 2024 — 2V0-72.22',                     inProgress: false },
     { id: 'awsCloudPractitioner',   name: 'AWS Cloud Practitioner', year: '2026', inProgress: false },
     { id: 'angularL1CD',   name: 'Junior Angular Developer - Certificates.dev', year: '2026', inProgress: false },
     { id: 'angularIntermediateHR',   name: 'Angular (Intermidiate) Developer - Hacker Rank', year: '2026', inProgress: false },
