@@ -23,11 +23,15 @@ export interface LanguageEntry {
 })
 export class CertificationsComponent {
   certs: CertEntry[] = [
-    { id: 'gh300',       name: 'GitHub GH-300',                                                      inProgress: true  },
+    { id: 'gh300',       name: 'Anthropic Academy Claude Certified Associate – Foundations', inProgress: true                                                       inProgress: true  },
+    { id: 'gh300',       name: 'GitHub GH-300',  inProgress: true  },
     { id: 'angularL2CD',   name: 'Mid-Level Angular Developer - Certificates.dev', year: '2026', inProgress: true },
-{ id: 'spring',      name: 'Spring Certified Professional 2024 — 2V0-72.22', year: '2026',                   inProgress: false },
+    { id: 'spring',      name: 'Spring Certified Professional 2024 — 2V0-72.22', year: '2026',                   inProgress: false },
     { id: 'awsCloudPractitioner',   name: 'AWS Cloud Practitioner', year: '2026', inProgress: false },
     { id: 'angularL1CD',   name: 'Junior Angular Developer - Certificates.dev', year: '2026', inProgress: false },
+    { id: 'OpenAIFoundations',   name: 'AI Foundations by OpenAI Academy', year: '2026', inProgress: false },
+    { id: 'ActivateAI',   name: 'ACTIVATE AI Foundation Badge', year: '2026', inProgress: false },
+    { id: 'agenticFullStack',   name: 'Agentic Java Developer', year: '2026', inProgress: false },
     { id: 'angularIntermediateHR',   name: 'Angular (Intermidiate) Developer - Hacker Rank', year: '2026', inProgress: false },
     { id: 'angularBasicHR',   name: 'Angular (Basic) Developer - Hacker Rank', year: '2026', inProgress: false },
     { id: 'javascriptIntermediateHR',   name: 'Javascript (Intermediate) Developer - Hacker Rank', year: '2026', inProgress: false },

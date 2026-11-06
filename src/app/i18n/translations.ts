@@ -14,7 +14,7 @@ export const TRANSLATIONS: Record<string, Record<Locale, string>> = {
   'nav.certifications': { en: 'Certifications', pt: 'Certificações' },
   'about.eyebrow': { en: 'Senior Software Engineer • Fullstack Developer • Tech Lead • Architect ', pt: 'Engenheiro de Software Sênior • Fullstack Developer • Tech Lead • Arquiteto' },
   'about.slide1.eyebrow': { en: 'Senior Software Engineer', pt: 'Engenheiro de Software Sênior' },
-  'about.slide1.title':   { en: 'Angular · JavaScript | Java · Spring Boot', pt: 'Angular · JavaScript | Java · Spring Boot' },
+  'about.slide1.title':   { en: 'Senior Full Stack Engineer | Angular • Java • Spring Boot • AWS | Microservices | CI/CD | AI Enablement', pt: 'Desenvolvedor Fullstack Senior | Angular • Java • Spring Boot • AWS | Microservices | CI/CD | AI Enablement' },
   'about.slide2.eyebrow': { en: 'Tech Lead & Software Architect', pt: 'Tech Lead & Arquiteto de Software' },
   'about.slide2.title':   { en: 'Microservices · Cloud Native | AWS · Azure', pt: 'Microsserviços · Cloud Native | AWS · Azure' },
   'about.slide3.eyebrow': { en: 'Fullstack & Mobile Developer', pt: 'Desenvolvedor Fullstack & Mobile' },
