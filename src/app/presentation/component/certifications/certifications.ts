@@ -23,7 +23,7 @@ export interface LanguageEntry {
 })
 export class CertificationsComponent {
   certs: CertEntry[] = [
-    { id: 'gh300',       name: 'Anthropic Academy Claude Certified Associate – Foundations', inProgress: true                                                       inProgress: true  },
+    { id: 'anthropic1', name: 'Anthropic Academy Claude Certified Associate – Foundations', inProgress: true },
     { id: 'gh300',       name: 'GitHub GH-300',  inProgress: true  },
     { id: 'angularL2CD',   name: 'Mid-Level Angular Developer - Certificates.dev', year: '2026', inProgress: true },
     { id: 'spring',      name: 'Spring Certified Professional 2024 — 2V0-72.22', year: '2026',                   inProgress: false },
